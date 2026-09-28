@@ -92,6 +92,16 @@
         "Does not infer a general AI speedup, benchmark reliability, or edit global memory or skills."
       ],
       "setup": "Use a fresh temporary project outside this repository with an empty private-notes directory designated as private for this synthetic scenario. The prompt authorizes that destination only."
+    },
+    {
+      "id": 9,
+      "prompt": "Capture this accepted decision in the explicitly authorized temporary project note docs/learning/catalog.md. Supplied evidence: display cache meets the five-minute freshness contract; confirmation separately checks current availability at the authoritative write. No performance measurements exist. Preserve where the choice applies and what should trigger rechecking.",
+      "expected_output": "A scoped decision note with applicability and recheck conditions, without invented proof.",
+      "assertions": [
+        "Records different display and confirmation contracts without a universal cache rule.",
+        "Distinguishes accepted choice and supplied evidence from performance proof.",
+        "Names changed freshness requirements or invalidation evidence as recheck conditions and stays in the authorized note."
+      ]
     }
   ]
 }

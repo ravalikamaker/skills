@@ -55,6 +55,16 @@
         "Does not invent architectural research, dependencies, or a skill pipeline.",
         "Preserves plan-only scope and does not claim files changed."
       ]
+    },
+    {
+      "id": 6,
+      "prompt": "Plan a settled local catalog display: existing bounded cache satisfies five-minute staleness, but booking confirmation must check current availability at the authoritative write. Preserve these distinct contracts, explain the next slice and acceptance; do not implement.",
+      "expected_output": "Contextual choices are part of a scoped technical plan.",
+      "assertions": [
+        "Retains cache reuse for display and authoritative confirmation semantics for the different requirement.",
+        "Defines data flow, dependency order, and planned acceptance without imposing evaluate-options as a prerequisite.",
+        "Preserves plan-only scope and gives a condition for revisiting freshness choices."
+      ]
     }
   ]
 }

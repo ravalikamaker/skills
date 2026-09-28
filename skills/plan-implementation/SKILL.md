@@ -25,6 +25,13 @@ rule, authority, or inaccessible input cannot be resolved, name the specific cho
 or prerequisite and defer only work that depends on it. Continue independent
 planning. Do not mistake a chosen approach for evidence of its feasibility.
 
+Choose among viable approaches against the actual behavior, caller contracts,
+compatibility, and operating constraints. Apply the same criteria consistently;
+different conditions may justify different choices. Preserve conventions unless a
+concrete mismatch justifies departure. State the decisive tradeoff and what would
+change the choice when they affect execution. This choice belongs to planning;
+evaluate-options is an optional companion for a focused comparison, not a prerequisite.
+
 ## Define the next useful slice
 
 Describe the scoped changes, affected interfaces and data flow, reuse, and the

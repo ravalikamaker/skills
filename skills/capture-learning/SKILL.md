@@ -29,7 +29,9 @@ use clearly labeled synthetic data, never private traces.
 Do not generalize one observed incident into a universal rule. Separate observed facts, inferences, and user preferences.
 
 For a consequential decision, retain the context, chosen option, rationale, and
-accepted consequences or tradeoffs. A choice is not proof that it worked. Read
+accepted consequences or tradeoffs. Include the governing requirements and when
+they apply or should be rechecked; a different contract may need a different choice.
+A choice is not proof that it worked. Read
 relevant existing decisions and identify an explicit supersession when the new
 choice replaces one; do not erase the original reasoning or silently treat a
 proposal as accepted. Use established decision records when available instead

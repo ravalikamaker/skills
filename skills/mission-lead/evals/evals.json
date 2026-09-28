@@ -117,6 +117,16 @@
         "Continues independent quoting planning without treating all uncertainty as a blocker.",
         "Keeps planning read-only and does not dispatch unauthorized implementation."
       ]
+    },
+    {
+      "id": 12,
+      "prompt": "Supplied-text-only coordination exercise; no tools or workers are available and no edits are requested. Draft bounded briefs for a catalog-display worker and booking-confirmation worker. Settled decisions: five-minute bounded cache for display, authoritative current availability at confirmation write. A worker suggests sharing cached values for both. Coordinate that proposal without reopening settled scope.",
+      "expected_output": "Briefs preserve governing contracts and route a boundary-changing departure to the lead.",
+      "assertions": [
+        "Gives workers governing freshness constraints and settled decisions, not merely file lists.",
+        "Rejects cached confirmation authority as violating the different correctness contract.",
+        "Coordinates shared-boundary proposals and independent work without claiming dispatch or execution."
+      ]
     }
   ]
 }

@@ -89,9 +89,14 @@ work, or combined acceptance needs a concrete example, read the relevant section
 [delegation examples](references/delegation-examples.md).
 
 Give each worker the purpose, beneficiary, problem, completion criteria, outcome and
-non-goals, relevant facts, owned files or artifacts,
+non-goals, relevant facts, governing constraints and settled decisions, owned files or artifacts,
 authorized actions, dependencies, checks, when to stop, and leaf guard.
 Ask it to report changed paths or findings, evidence, unresolved issues, and limits.
+Workers preserve settled choices and conventions unless a concrete mismatch
+justifies proposing a departure. Surface conflicts with binding requirements; do
+not silently override them. Apply shared criteria consistently while retaining justified
+contract differences. Coordinate departures that change shared boundaries with the
+lead before dependent edits; continue independent work within the brief.
 Assign integration explicitly once inputs are ready. The implementation owner
 maintains affected existing docs and comments in the same change, favoring the
 existing canonical location. A new document should serve a named reader and use;

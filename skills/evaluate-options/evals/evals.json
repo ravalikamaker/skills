@@ -1,0 +1,95 @@
+{
+  "skill_name": "evaluate-options",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Supplied-text-only evaluation; no source or tool inspection. A public catalog permits content up to five minutes old. The existing expiring cache meets this limit and the fresh-read path also works. Compare cache reuse with always reading the source using freshness, request use, and operational burden; recommend one without implementation or invented performance figures.",
+      "expected_output": "Recommends existing bounded cache reuse for the supplied freshness contract, with scoped tradeoffs.",
+      "assertions": [
+        "Uses the stated five-minute allowance rather than demanding universal fresh reads.",
+        "Compares request use and operating burden without inventing latency, volume, or savings.",
+        "Names expiry/freshness changes that would require revisiting and makes no edits."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Supplied-text-only evaluation; no source or tool inspection. A public catalog now requires current availability at the authoritative booking write; five-minute-old values cannot authorize a confirmation. The existing expiring cache meets the former five-minute display limit and the fresh-read path works. Compare cache reuse with always reading the source using freshness, request use, and operational burden; recommend one without implementation or invented performance figures.",
+      "expected_output": "Changes the decision at the confirmation boundary because stale values violate the new correctness requirement.",
+      "assertions": [
+        "Rejects stale cache values as confirmation authority and chooses an authoritative current check.",
+        "Uses the same criteria as the catalog-display comparison; explains the changed requirement rather than a universal cache prohibition.",
+        "Does not claim a separate read alone prevents write races or fabricate performance figures."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Supplied-text-only evaluation; no source or tool inspection. A public catalog permits content up to five minutes old. The existing expiring cache meets this limit and the fresh-read path also works. The page title changed from Catalog to Browse. Compare cache reuse with always reading the source using freshness, request use, and operational burden; recommend one without implementation or invented performance figures.",
+      "expected_output": "Retains the cache recommendation because the changed page title does not alter the governing conditions.",
+      "assertions": [
+        "Uses the same five-minute freshness criterion and existing capability.",
+        "Does not treat naming as a reason to change data freshness or storage architecture.",
+        "Keeps claimed benefits and revisit conditions scoped to supplied evidence."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our accepted C# booking API uses an existing typed outcome with sold-out and policy-rejected cases. Evaluate tradeoffs within that choice; do not redesign it. Form parsing next door uses TryParse because callers only need valid/invalid. A reviewer wants one error representation everywhere. Supplied facts only; no tools.",
+      "expected_output": "Preserves the explicit typed outcome and justified neighboring parsing contract.",
+      "assertions": [
+        "Keeps the user-chosen booking representation and compares caller-required distinctions.",
+        "Does not force TryParse and booking to share an error model for uniformity.",
+        "Does not recommend adding a library or claim Microsoft mandates Result."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Supplied-text-only: we are choosing between the current database query and an added cache to meet a measured-latency requirement, but no traces, request rates, invalidation behavior, or timings are supplied. Both look feasible on paper. Evaluate now without tools or new dependencies; do not invent measurements.",
+      "expected_output": "Gives a conditional recommendation and identifies the decisive missing evidence.",
+      "assertions": [
+        "Separates apparent feasibility from demonstrated latency compliance.",
+        "Names measurement of the current representative path and cache freshness/invalidation requirements as useful missing evidence.",
+        "Does not produce fabricated scores, benchmarks, precise savings, or assert either approach meets the latency target."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Use evaluate-options for a plan-only choice: cached or fresh reads for the agreed five-minute-stale catalog. Existing bounded cache meets the rule. Recommend the choice and outline the next technical slice and checks; do not implement. Supplied facts only.",
+      "expected_output": "A scoped recommendation and implementation plan preserving read-only authority.",
+      "assertions": [
+        "Chooses against the freshness contract and states tradeoffs/revisit conditions.",
+        "Can outline reuse, data flow, dependencies, and planned acceptance without requiring another skill.",
+        "Does not edit, execute implementation, or describe planned checks as passed."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Local implementation of the selected cache reuse and focused checks is already authorized. While planning, evaluate the governing constraints: existing cache meets the five-minute display rule; confirmation uses an authoritative current check. Does doing this comparison require a new approval before the authorized edits? Answer from supplied facts only; no files or tools are available in this exercise.",
+      "expected_output": "Preserves existing execution authority and distinguishes it from standalone evaluation.",
+      "assertions": [
+        "Does not impose a second approval solely because comparison occurred.",
+        "Keeps implementation authority local and bounded, with confirmation semantics preserved.",
+        "Does not claim edits or checks occurred in this supplied-text exercise."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Supplied-text-only C# comparison: a numeric form accepts arbitrary user text and needs a parsed integer or a single invalid-input message. Compare TryParse, the existing rich business Result, and exception-driven parsing; recommend without libraries or implementation.",
+      "expected_output": "Recommends TryParse for the simple validity contract without a universal error-handling rule.",
+      "assertions": [
+        "Uses the valid/invalid caller requirement to choose TryParse.",
+        "Explains that the rich Result adds no required distinctions here while richer domain failures can differ.",
+        "Does not infer that all exceptions must be translated or all failures must return Result."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Supplied-text-only evaluation: the user explicitly requires the existing five-minute cache to authorize a booking confirmation, and also requires current availability at the authoritative write. The cache can contain stale availability; no project or tools are supplied. Compare viability without changing either binding requirement or silently substituting an implementation.",
+      "expected_output": "Surfaces the concrete conflict and bounds any recommendation on resolving it.",
+      "assertions": [
+        "Names why stale cache authority cannot guarantee current availability at confirmation.",
+        "Does not silently replace either explicit requirement or pretend both can be satisfied as stated.",
+        "Identifies the specific requirement clarification needed and remains read-only."
+      ]
+    }
+  ]
+}

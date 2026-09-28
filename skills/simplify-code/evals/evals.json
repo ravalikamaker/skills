@@ -63,6 +63,16 @@
         "Does not accept shorter code as sufficient proof.",
         "Makes no edits."
       ]
+    },
+    {
+      "id": 6,
+      "prompt": "Read-only assessment from supplied facts: the form parser returns valid/invalid via TryParse; booking returns sold-out or policy-rejected through an existing typed outcome. A proposal unifies both behind one rich Result for consistency. Assess simplification without edits.",
+      "expected_output": "Preserves differences justified by distinct caller contracts.",
+      "assertions": [
+        "Compares required outcomes rather than counting representations.",
+        "Does not endorse uniformity alone as simplification or add a dependency.",
+        "Remains read-only."
+      ]
     }
   ]
 }

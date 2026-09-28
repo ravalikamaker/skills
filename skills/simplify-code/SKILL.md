@@ -21,6 +21,11 @@ fewer lines or files alone do not prove a simpler design. Read
 [simplification examples](references/simplification-examples.md) when assessing
 shared rules, forwarding wrappers, or an atomic internal change.
 
+Do not merge similar-looking code solely for uniformity. Compare its caller
+contracts and operating conditions using the same criteria; preserve differences
+that serve distinct required behavior. Remove variation only when those reasons
+no longer apply.
+
 Prefer the smallest coherent change. Keep useful boundaries and comments that
 explain non-obvious invariants, rationale, or contracts. Do not replace duplication
 with a generic framework that adds more concepts than it removes. Preserve

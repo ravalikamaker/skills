@@ -952,6 +952,94 @@
       "prompt": "Behavior examples are agreed. Inspect current source and plan the technical data flow and dependent implementation changes.",
       "expected_skill": "plan-implementation",
       "rationale": "Settled behavior now needs a technical approach."
+    },
+    {
+      "id": "options-01",
+      "focus": "evaluate-options",
+      "kind": "explicit",
+      "prompt": "Use evaluate-options to compare cached and fresh reads for this flow against its freshness and operating constraints. Recommend an approach and revisit conditions; do not implement.",
+      "expected_skill": "evaluate-options",
+      "rationale": "Explicit bounded comparison and recommendation."
+    },
+    {
+      "id": "options-02",
+      "focus": "evaluate-options",
+      "kind": "implicit",
+      "prompt": "We have two viable storage approaches. Compare them against our supplied retention, query, and cost requirements, inspect decisive local evidence, and recommend one with tradeoffs. No execution sequence is requested.",
+      "expected_skill": "evaluate-options",
+      "rationale": "Choosing between approaches is the requested outcome."
+    },
+    {
+      "id": "options-03",
+      "focus": "evaluate-options",
+      "kind": "implicit",
+      "prompt": "Should this caller use simple validity parsing or richer rejection outcomes? Compare the actual caller contracts, preserve explicit constraints, and explain when the choice would change.",
+      "expected_skill": "evaluate-options",
+      "rationale": "A contextual representation choice rather than cleanup or sequencing."
+    },
+    {
+      "id": "options-04",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "What does evaluate-options do?",
+      "expected_skill": null,
+      "rationale": "A capability question does not invoke evaluation."
+    },
+    {
+      "id": "options-05",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "Rename the local variable row to item in this supplied snippet only.",
+      "expected_skill": null,
+      "rationale": "A literal edit needs no option research."
+    },
+    {
+      "id": "options-06",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "The approach and behavior are settled. Inspect current callers and plan interfaces, dependency order, and acceptance for the next slice; do not reopen the choice.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Technical sequencing owns settled intent."
+    },
+    {
+      "id": "options-07",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "Design a bounded trial to test whether shorter signup improves completion before further investment; include hypothesis, comparison, limits, and proceed/change/stop criteria.",
+      "expected_skill": "design-experiment",
+      "rationale": "A discriminating trial plan has a more specific outcome."
+    },
+    {
+      "id": "options-08",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "Assess whether removing this private adapter would eliminate complexity or distribute its conversion rule across callers. Do not edit.",
+      "expected_skill": "simplify-code",
+      "rationale": "The requested outcome is internal simplification assessment."
+    },
+    {
+      "id": "options-09",
+      "focus": "evaluate-options",
+      "kind": "negative",
+      "prompt": "Implement the agreed CSV export with native workers, assign ownership, integrate their results, and verify locally.",
+      "expected_skill": "mission-lead",
+      "rationale": "Authorized coordinated execution is orchestration."
+    },
+    {
+      "id": "plan-10",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "Compare two viable queue approaches against our throughput, ordering, and operational constraints; recommend one with evidence and revisit conditions, without an execution plan.",
+      "expected_skill": "evaluate-options",
+      "rationale": "A focused choice is distinct from implementation sequencing."
+    },
+    {
+      "id": "experiment-07",
+      "focus": "design-experiment",
+      "kind": "negative",
+      "prompt": "Our relevant requirements and evidence are already supplied. Compare the viable cache and direct-read approaches and recommend one with scoped tradeoffs; no trial is requested.",
+      "expected_skill": "evaluate-options",
+      "rationale": "Comparison needs no new experiment when decisive evidence exists."
     }
   ]
 }
