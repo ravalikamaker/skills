@@ -1,0 +1,33 @@
+name: Improvement proposal
+description: Propose a focused skill, documentation, or evaluation improvement.
+body:
+  - type: markdown
+    attributes:
+      value: For early exploration, use Ideas in Discussions. Use synthetic examples only; do not include secrets, private transcripts, customer data, internal context, or identifying local paths.
+  - type: input
+    id: scope
+    attributes:
+      label: Skill or area
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and example
+      description: Who encounters this, and what task is currently difficult? Include a minimal synthetic example.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the desired behavior and relevant tradeoffs or alternatives.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: How could we check it?
+      description: Suggest an observable outcome or fixture. If you have results, include host/model versions and a with/without-skill summary; keep raw outputs outside the repository. State evidence limits.
+    validations:
+      required: true

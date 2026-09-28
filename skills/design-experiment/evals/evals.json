@@ -1,0 +1,48 @@
+{
+  "skill_name": "design-experiment",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Synthetic planning request: Before building a request dashboard, test the assumption that staff miss requests because they cannot see them. We can use a mockup and anonymized sample requests for at most two hours. Plan only; no participants may be contacted.",
+      "expected_output": "A bounded mockup test with a scoped hypothesis, observable misses, comparison, two-hour limit, and predeclared action criteria.",
+      "assertions": [
+        "Tests visibility rather than merely whether the mockup renders.",
+        "Respects the two-hour limit and permitted anonymized inputs.",
+        "Defines observations for proceed, change, stop or inconclusive decisions before execution.",
+        "Does not run the experiment, contact participants, or invent results."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Synthetic planning request: One customer liked our prototype. Tell us what experiment would determine whether to invest in a larger build. We have no traffic baseline or research budget yet. Do not execute.",
+      "expected_output": "A plan that treats one favorable response as limited evidence and proposes a decision-relevant bounded test with explicitly proposed resources.",
+      "assertions": [
+        "Does not infer broad demand or statistical significance from one response.",
+        "States the important uncertain assumption and a falsifiable observation.",
+        "Labels resource limits and thresholds not supplied by the user as proposed.",
+        "Includes an inconclusive outcome without asserting validation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Synthetic planning request: Our slow export might result from file size or a network retry. Plan a local test using existing synthetic files; new network traffic and code changes are not authorized.",
+      "expected_output": "A scoped comparison that can help distinguish file-size effects from retries while respecting local-only access.",
+      "assertions": [
+        "Keeps both explanations tentative and identifies distinguishing observations.",
+        "Uses permitted local evidence or explicitly notes what remains inaccessible.",
+        "Does not send network requests or edit code to execute the plan."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Plan only: We think a redesigned intake screen reduces operator errors. Our proposed test compares 20 simple daytime cases on the new screen with 20 complex overnight cases on the old screen. The decision is whether to invest further. Budget is one afternoon.",
+      "expected_output": "A bounded test that corrects or explicitly limits the incomparable conditions and states a decision rule.",
+      "assertions": [
+        "Names complexity and time of day as plausible explanations for differences.",
+        "Proposes comparable tasks and outcome definitions within the supplied budget.",
+        "Distinguishes error reduction from merely successful rendering.",
+        "Includes an inconclusive outcome and invents no results."
+      ]
+    }
+  ]
+}

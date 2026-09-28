@@ -1,0 +1,25 @@
+---
+name: my-skill
+description: "Replace with what this skill does and the specific requests that should trigger it."
+license: MIT
+---
+
+# My skill
+
+Replace every placeholder before publishing. Rename `my-skill` to match the
+containing directory. This template is not a published skill.
+
+## When to use
+
+Describe the task, relevant inputs, and the boundaries of this skill.
+
+## Workflow
+
+1. Describe the information to inspect before acting.
+2. Give concrete steps that produce the intended result.
+3. Explain how to check the result and report any remaining limitations.
+
+## Supporting files
+
+Remove this section if unnecessary. Link any scripts, references, or assets using
+paths relative to this file, and explain when to read or use each file.

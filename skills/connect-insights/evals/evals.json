@@ -1,0 +1,37 @@
+{
+  "skill_name": "connect-insights",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Synthetic read-only synthesis: Note A quotes interview I: requests felt slow. Note B summarizes the same interview I. Independent incident C records a handoff that took four hours. Connect these insights; no new data collection is authorized.",
+      "expected_output": "A candidate timing/handoff connection with two independent source events, alternative explanations, and a next question.",
+      "assertions": [
+        "Counts notes A and B as one interview observation and distinguishes incident C.",
+        "Connects only source-supported observations and marks shared causes as hypotheses.",
+        "Names a plausible alternative or evidence that would distinguish explanations.",
+        "Does not contact sources or claim corroboration from duplicated notes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Synthetic read-only synthesis: Interview A says short forms reduced abandonment in a volunteer sign-up process. Report B says shortened safety checklists omitted necessary checks in a laboratory. Should we transfer the short-form idea to laboratory intake?",
+      "expected_output": "A qualified analogy identifying different consequences and contradictory evidence, with a question or test before transfer.",
+      "assertions": [
+        "Preserves the laboratory harm evidence rather than forcing a universal shorter-is-better pattern.",
+        "States the analogy scope and differences between domains.",
+        "Distinguishes a candidate test from proof that the benefit transfers.",
+        "Does not recommend an unqualified change or invent causal evidence."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Synthetic read-only synthesis: Note A observes a delivery delay during a storm. Note B records a spreadsheet typo in a different organization. Note C describes satisfaction with a training session. We have no other context. Find the common root cause.",
+      "expected_output": "A statement that the sources do not support a reliable common pattern or cause, with a bounded clarification question.",
+      "assertions": [
+        "Accepts that no reliable pattern or common cause is supported.",
+        "Does not invent a common psychological, organizational, or technical cause.",
+        "Identifies a next question that could help establish relevance without collecting data automatically."
+      ]
+    }
+  ]
+}

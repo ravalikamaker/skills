@@ -1,0 +1,142 @@
+{
+  "skill_name": "verify-work",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review only: a synthetic currency converter was requested to round to two decimals. The producer says done and reports a passing linter. The artifact returns 1.239 for input 1.239. No edits are authorized.",
+      "expected_output": "A finding that the requested rounding fails; lint is insufficient evidence; no repair.",
+      "assertions": [
+        "Compares the output against the two-decimal requirement.",
+        "Separates passing lint from failed behavior.",
+        "Leaves the deliverable unchanged."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Verify this synthetic release claim: local unit tests passed for commit abc123, but no remote SHA, deployment result, or production request is available. The user asked whether production is fixed.",
+      "expected_output": "An explicitly limited conclusion: local tests passed; production repair remains unverified.",
+      "assertions": [
+        "Does not claim production is fixed.",
+        "Names missing deployment/version or production behavior evidence.",
+        "Does not deploy or mutate external state to fill the gap."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Check this complete synthetic report. Requirement: list total quantity and total cost. Source rows: quantity 2 at cost 3 per unit; quantity 1 at cost 4 per unit. Report: total quantity 3, total cost 10. The required formatting check is recorded as passed for this unchanged report. Summarize acceptance.",
+      "expected_output": "A concise acceptance of the documented report criteria with the existing evidence.",
+      "assertions": [
+        "Reuses still-valid checks.",
+        "Avoids redundant review or irrelevant testing.",
+        "Scopes acceptance to the report rather than inventing host or delivery proof."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Synthetic review-only task: A new reminder was intended to reduce missed requests without excessive interruptions. The producer reports that the reminder renders correctly. Supplied trial counts: missed requests fell from 8 to 3, but interruptions increased from 5 to 40 for the same staff group and period. No acceptance thresholds or causal controls were agreed.",
+      "expected_output": "A qualified verification that reports the observed benefit and adverse effect without accepting the overall claim from rendering alone.",
+      "assertions": [
+        "Separates correct rendering from the intended benefit.",
+        "Reports both fewer misses and more interruptions from the supplied evidence.",
+        "Does not declare causation or an agreed acceptable tradeoff and identifies the unresolved acceptance decision.",
+        "Keeps review read-only."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Review only: an order refactor is claimed to preserve behavior. Previously a confirmed order rejected cancellation; now it accepts it. The domain rule still allows cancellation only while pending. Unit tests and an OpenAPI schema check passed. Verify the claim without editing.",
+      "expected_output": "A business-rule and behavior-preservation defect, despite passing structural checks.",
+      "assertions": [
+        "Compares the prior and changed observable behavior for confirmed orders.",
+        "Reports the violated pending-only rule and customer consequence.",
+        "Does not treat valid OpenAPI or passing unit tests as business correctness or full compliance.",
+        "Leaves the artifact unchanged."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Review only: A plain text report must correctly total 2 items at 3 each. It reports 6. There is no application, HTTP API, accessibility target, or secure process claim. Verify this report.",
+      "expected_output": "Acceptance scoped to the calculation without an irrelevant standards workflow.",
+      "assertions": [
+        "Checks the supplied calculation.",
+        "Does not impose OpenAPI, ASVS, WCAG, or SSDF checks.",
+        "Does not invent certification or compliance claims."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Review only: customers can request a report, see a successful ready screen, and download it. The requirement also says a processing report must show waiting and a failed report must offer retry only after confirmed failure. The artifact instead shows Ready for running jobs and retries timed-out jobs with new IDs. Existing architecture forbids browser imports of the report provider; its required dependency checker has passed for this version.",
+      "expected_output": "Journey/recovery defects with preserved valid architecture evidence and no unapproved fixes.",
+      "assertions": [
+        "Finds running-as-ready defect and side-effect retry risk without assuming timeout means failure.",
+        "Checks relevant waiting and failure behavior rather than accepting success screen alone.",
+        "Reuses version-valid architecture checker evidence without inventing a governance workflow.",
+        "Keeps the review read-only."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Review only: a refactor must preserve an agreed boundary forbidding direct UI imports of the storage adapter. The required project dependency check failed on ui/download.ts importing storage/adapter.ts. Unit tests passed. Verify the claim.",
+      "expected_output": "An architecture constraint violation with precise project evidence despite passing unit tests.",
+      "assertions": [
+        "Connects the agreed boundary to the failed dependency check.",
+        "Identifies the affected import and does not equate unit success with boundary preservation.",
+        "Does not invent additional architecture policy or repair without authority."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Verify a local CSV exporter in an empty temporary project. Create only a temporary Python artifact containing: import csv, io; then define export_csv(rows) using csv.writer on io.StringIO and return its text. Local shell execution and temporary outputs are authorized. Check embedded commas and quotes; the producer only reported success.",
+      "expected_output": "Executes a representative shell check against the actual temporary artifact and reports its result rather than assigning user QA.",
+      "assertions": [
+        "Runs an accessible check with comma and quote inputs and independently inspects the result.",
+        "Does not accept producer success or ask the user to run the available check.",
+        "Scopes acceptance to the checked local behavior without claiming browser or hosted proof."
+      ],
+      "setup": "Use a fresh temporary project outside this repository and a host exposing a Python-capable shell. If shell execution is unavailable, mark the execution scenario skipped rather than passed."
+    },
+    {
+      "id": 10,
+      "prompt": "Review only: an export must contain only the signed-in team’s rows. The producer reports green quote-format unit tests and an endpoint test with a caller-supplied team ID. No check follows sign-in through the download. The endpoint now accepts another team ID; a proposed fix is to replace authorization with an always-allow mock and remove the denial assertion. Specify the smallest useful missing checks and acceptance limits; do not edit.",
+      "expected_output": "Rejects weakened testing, identifies the uncovered identity/authorization defect and proposes meaningful connected and focused checks without claiming execution.",
+      "assertions": [
+        "Derives own-team and denied-other-team expectations from the requirement rather than current endpoint output.",
+        "Keeps the denial assertion and real authorization boundary meaningful rather than approving the always-allow substitution.",
+        "Chooses a real sign-in-to-download check and appropriate focused authorization coverage rather than a test count or blanket E2E-only policy.",
+        "Labels proposed checks as unexecuted and does not claim provider or hosted proof."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Synthetic verification: local tests passed for artifact R4. A required integration gate runs only in CI; it has not run. The available CI tool allows result inspection, but triggering it requires publication authority that the user has not given. The producer says local green is enough and asks the user to take over all QA. Determine acceptance and the next authorized action.",
+      "expected_output": "Inspects accessible CI state where possible, keeps the required gate unresolved, and identifies the narrow trigger-authority gap while retaining local evidence.",
+      "assertions": [
+        "Does not substitute local success for required CI acceptance or claim completion.",
+        "Uses accessible inspection rather than reflexively assigning all QA to the user.",
+        "Names the specific missing trigger authority without publishing or assuming permission.",
+        "Retains valid local evidence and separates it from the unrun integration gate."
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Plan verification only for a synthetic note app and its CSV download. Saving shows a success banner, and the first download matches the two starting notes. The requirement promises persistent edits and downloads containing the current notes. Local temporary records and browser checks are permitted, but no checks have been run. What targeted checks could distinguish actual success from the banner and cached fixture?",
+      "expected_output": "Proposes a distinct note edit with reopen or refresh and a current-data download whose parsed contents are checked, while preserving the unexecuted status.",
+      "assertions": [
+        "Checks a distinguishable permitted input and reads it back after reopening or refreshing to test promised persistence.",
+        "Changes the note fixture before another download and inspects the generated CSV rather than accepting a success banner.",
+        "Does not claim the checks ran or impose persistence checks on unrelated stateless artifacts."
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Plan acceptance for a consequential synthetic permissions-and-export integration. Native independent execution is available and permitted. Requirements and a runnable artifact can be supplied separately from the producer code and rationale. The concern is that both contributors assumed the displayed team name establishes export authorization. Would a requirements-first independent acceptance pass add evidence, and should source stay hidden if that pass finds a defect? No behavioral trial is requested.",
+      "expected_output": "Explains a useful optional requirements-and-artifact acceptance pass for the shared assumption, with source available for subsequent diagnosis and no claim of executed proof.",
+      "assertions": [
+        "Targets the supplied shared authorization assumption through the runnable journey and independent expected rows.",
+        "Treats the independent acceptance pass as optional rather than a universal extra-reviewer requirement.",
+        "Provides source and diagnostic context when needed for debugging rather than preserving blindness.",
+        "Labels the pass as proposed rather than executed."
+      ]
+    }
+  ]
+}

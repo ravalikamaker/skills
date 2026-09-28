@@ -1,0 +1,97 @@
+{
+  "skill_name": "capture-learning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Capture the retry lesson in docs/learning. The existing note and the synthetic evidence are in the workspace. Use only that evidence, check for duplicates, and keep the public note scoped to what was verified.",
+      "expected_output": "Updates the existing retry note if the evidence corrects it, preserves provenance, and reports the saved path and evidence limits.",
+      "assertions": [
+        "Reads the existing note before choosing skip, update, or new.",
+        "Updates the same lesson instead of creating a duplicate.",
+        "Preserves the earlier source and states that the correction applies only to the synthetic fixture.",
+        "Does not edit skills, global memory, or policy files."
+      ],
+      "files": [
+        "evals/fixtures/docs/learning/retry.md",
+        "evals/fixtures/evidence/retry-v1.txt",
+        "evals/fixtures/evidence/retry-v2.txt"
+      ],
+      "setup": "Copy evals/fixtures/ contents into a fresh temporary project. Its notes are intended for a public audience; all input is synthetic. Use that directory as the workspace. Do not expose assertions or expected_output to the executor."
+    },
+    {
+      "id": 2,
+      "prompt": "Read-only investigation: a synthetic upload succeeded once after a retry; the cause is unknown. Suggest any reusable lesson, but no note write is authorized.",
+      "expected_output": "A candidate observation with uncertain cause, or a reason to skip; no saved note.",
+      "assertions": [
+        "Writes no local or global note.",
+        "Does not describe retry as a proven universal fix.",
+        "Distinguishes observation from causal evidence."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Record my preference in docs/learning/review-style.md: lead code reviews with the highest-impact finding and its evidence. The destination is authorized and contains no related note.",
+      "expected_output": "A short new user-preference note and readback confirmation.",
+      "assertions": [
+        "Cites the user instruction as the source of the preference.",
+        "Does not invent a technical cause or benchmark.",
+        "Does not claim saving guarantees automatic loading in future sessions."
+      ],
+      "setup": "Use a fresh temporary project with an empty docs/learning directory, intended for a public audience."
+    },
+    {
+      "id": 4,
+      "prompt": "Synthetic read-only lesson suggestion: Related note A says errors preceded a retry by several minutes. Note B says the same error also appeared during successful uploads. One failed upload later succeeded after retry; cause is unknown. Suggest a future lesson, no writing is authorized.",
+      "expected_output": "A narrow observation referencing related evidence and acknowledging the counterexample; any early warning or prevention remains tentative.",
+      "assertions": [
+        "Uses the related note counterexample to limit the candidate lesson.",
+        "Does not describe the error as a reliable early warning or retry as proven prevention.",
+        "Does not force a prevention section or write a note."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Save an authorized decision note in an empty docs/learning directory in a temporary synthetic project. We accepted a single-region deployment because our budget cannot fund two regions; the consequence is reduced regional outage resilience. An earlier proposal favored two regions but was never approved. No availability test has run.",
+      "expected_output": "A decision note preserving context, accepted choice, rationale, tradeoff, and limits without claiming operational success.",
+      "assertions": [
+        "Labels the single-region choice accepted and the earlier alternative only proposed.",
+        "Records budget rationale and resilience consequence.",
+        "Does not call the decision a tested availability improvement.",
+        "Writes only the authorized note and reads it back."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Capture this failed approach in docs/learning/restart-attempt.md in the empty synthetic project. Three restarts of version v2 with the same input did not resolve the timeout; evidence/restarts.txt records all three attempts. No production comparison ran and the cause remains unknown. The note write is authorized, but no skill or policy edit is authorized.",
+      "expected_output": "A scoped negative learning note preserving conditions, failed attempts, evidence, and uncertainty.",
+      "assertions": [
+        "Records version v2, unchanged input, three failed restarts, and evidence/restarts.txt.",
+        "Does not declare restarts universally ineffective or the timeout cause established.",
+        "Checks the authorized destination and reads back the saved note.",
+        "Does not turn the result into a permanent skill, memory, or policy rule."
+      ],
+      "setup": "Use a fresh temporary project outside this repository, with an empty docs/learning directory and evidence/restarts.txt containing three synthetic v2 attempts with the same input, each timing out after restart. Its notes are intended for a public audience. Do not expose assertions or expected_output to the executor."
+    },
+    {
+      "id": 7,
+      "prompt": "Read-only evaluation: a proposed reminder did not reduce misses in one five-user session, while two users needed help to continue. We have no repeated trial or agreed causal controls. Suggest useful negative learning; no destination or note write is authorized.",
+      "expected_output": "A candidate observation about the limited trial, including interventions and limits, without writing.",
+      "assertions": [
+        "Includes the failed observed benefit and two user interventions.",
+        "Scopes the observation to this single session and does not declare the feature universally ineffective.",
+        "Does not save a note or update policy merely because a negative result exists."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Record a synthetic forecast lesson in the authorized private notes directory. We forecast a locally checked export in 20 minutes from one comparable run. On model M and harness H this run took 35 measured minutes: parser repair added 15 minutes, shell checks passed, and no external wait occurred. No global memory or skill edit is authorized.",
+      "expected_output": "A concise private note comparing the limited forecast with the observed result and parser rework, scoped to task, executor, harness, and checks.",
+      "assertions": [
+        "Checks the private authorized destination and writes only the scoped note.",
+        "Records measured forecast/actual, endpoint, model/harness, checks and rework without inventing human attention or wait.",
+        "Does not infer a general AI speedup, benchmark reliability, or edit global memory or skills."
+      ],
+      "setup": "Use a fresh temporary project outside this repository with an empty private-notes directory designated as private for this synthetic scenario. The prompt authorizes that destination only."
+    }
+  ]
+}

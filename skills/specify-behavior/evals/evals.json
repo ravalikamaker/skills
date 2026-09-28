@@ -1,0 +1,80 @@
+{
+  "skill_name": "specify-behavior",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Specify intended behavior, no edits: discounts apply to subtotals of at least 100, exclude delivery fees, and cannot make the subtotal negative. Provide representative examples for a discount of 15.",
+      "expected_output": "Concrete eligibility and boundary examples with observable totals, without implementation choices.",
+      "assertions": [
+        "Covers below 100, exactly 100, and an eligible subtotal.",
+        "Keeps delivery fees outside the eligibility subtotal.",
+        "Preserves the nonnegative rule without inventing another discount policy.",
+        "Does not claim passing implementation tests."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Plan only: cancellation is allowed before payment clears and rejected afterward without state change. Specify examples. We have no rule for payment and cancellation arriving at the same time.",
+      "expected_output": "Success and rejection examples plus an explicitly unresolved concurrency boundary.",
+      "assertions": [
+        "Shows unpaid success and paid rejection with observable state outcomes.",
+        "Marks simultaneous arrival unresolved.",
+        "Does not invent ordering or refund policy.",
+        "Does not require Gherkin or a framework."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Specify the shared HTTP behavior for CSV export before implementation: authenticated staff can download their own team data; another team must not be returned. Empty-team export behavior is not decided. We have no agreed storage design.",
+      "expected_output": "Consumer-facing success and authorization examples with empty-result decision separated from internals.",
+      "assertions": [
+        "Uses own-team and other-team cases with observable outputs or rejection.",
+        "Marks empty export behavior undecided rather than inventing a format.",
+        "Does not require a database layout or function names.",
+        "Does not claim that a completed artifact exists."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use specify-behavior to review whether our already completed rounding implementation actually returns 1.24 for 1.239. You have the artifact and acceptance rule; no new behavior is being designed.",
+      "expected_output": "Recognizes completed-artifact verification as the needed work rather than replacing it with a specification.",
+      "assertions": [
+        "Distinguishes intended behavior specification from checking the actual artifact.",
+        "Does not claim success by restating the acceptance rule.",
+        "Does not invent additional requirements or a test framework."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Specify behavior before implementation: submitting a payout returns an operation ID; the status API can say running, failed-with-no-transfer, or completed. A timeout alone has unknown outcome. The provider deduplicates a repeated request only with the original ID for 24 hours. No behavior after that window is agreed.",
+      "expected_output": "Representative waiting/failure/unknown/recovery cases tied to status reconciliation and scoped deduplication.",
+      "assertions": [
+        "Separates running, confirmed failure, and unknown timeout.",
+        "Uses status reconciliation or documented same-ID safe replay within its conditions before any new side-effecting submission.",
+        "Preserves original-ID and 24-hour conditions without inventing retry safety outside them.",
+        "Marks post-window handling unresolved and defines a bounded pending decision rather than infinite retries."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Specify the relevant journey for a team CSV export: authorised staff may export their own team; another team is denied. A team with zero rows must receive a header-only CSV. The agreed export is synchronous and has no cancellation capability.",
+      "expected_output": "Concrete success, denied, and empty examples without invented waiting or cancellation mechanics.",
+      "assertions": [
+        "Includes supplied denied and header-only empty outcomes.",
+        "Does not invent asynchronous states or a cancellation service.",
+        "Keeps examples at observable consumer behavior."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Plan only: a discount of 15 applies when subtotal is at least 100, excluding delivery. Existing tests cover a subtotal of 120 and quote formatting for unrelated exports. The current calculator applies the discount to subtotal 99 plus delivery 5. Choose useful acceptance examples and testing boundaries; a full checkout can verify wiring, but do not execute or change code.",
+      "expected_output": "Requirement-derived boundary examples and focused rule coverage plus an appropriate connected checkout candidate, without copying the faulty output or multiplying tests.",
+      "assertions": [
+        "Shows subtotal 99 plus delivery 5 as ineligible and exactly 100 as eligible using the supplied rule.",
+        "Identifies the uncovered delivery-inclusion defect despite the existing happy-path test.",
+        "Selects focused rule checks and a useful checkout wiring check without insisting every rule case be E2E.",
+        "Keeps checks proposed and does not claim fail-before or pass-after evidence."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ravalikamaker-skills",
+  "version": "0.3.2",
+  "description": "Portable workflows for problem framing, domain modeling, feature shaping, behavior specification, experiments, diagnosis, safe evolution, coordination, verification, handoff, learning, prevention, and synthesis.",
+  "author": {
+    "name": "ravalikamaker"
+  },
+  "repository": "https://github.com/ravalikamaker/skills",
+  "license": "MIT"
+}

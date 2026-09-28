@@ -1,0 +1,16 @@
+{
+  "name": "ravalikamaker",
+  "owner": {
+    "name": "ravalikamaker"
+  },
+  "plugins": [
+    {
+      "name": "ravalikamaker-skills",
+      "source": "./",
+      "version": "0.3.2"
+    }
+  ],
+  "metadata": {
+    "description": "Portable workflows for problem framing, domain modeling, feature shaping, behavior specification, experiments, diagnosis, safe evolution, coordination, verification, handoff, learning, prevention, and synthesis."
+  }
+}

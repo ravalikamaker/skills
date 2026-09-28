@@ -1,0 +1,79 @@
+{
+  "skill_name": "shape-feature",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Plan only: staff need to download completed request data as CSV for weekly reconciliation. We have two developer days, an existing authenticated request list, and no background-job service. Shape the feature; scheduled exports are optional, not required.",
+      "expected_output": "A bounded approach and useful manual-export slice, with risks and exclusions.",
+      "assertions": [
+        "Preserves CSV reconciliation value and two-day investment boundary.",
+        "Uses an end-to-end manual download candidate rather than presenting only a table or screen.",
+        "Makes scheduled export exclusion or tradeoff explicit.",
+        "Does not invent a delivery guarantee or implement."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Shape our feature, no execution: customers must see whether their submitted claim needs more documents. We have one week; claims already have statuses, but document-needed status is sometimes stale. The proposed first slice is just a database migration.",
+      "expected_output": "A useful customer journey proposal with stale data risk and a bounded first slice.",
+      "assertions": [
+        "Does not call a database migration alone a useful delivered feature.",
+        "Connects a customer entry point, status, and next action.",
+        "Identifies stale status as a risk to the promised value.",
+        "Keeps the one-week budget as a boundary rather than proof."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Plan only: shape instant international payouts with a half-day budget. The bank integration is unverified and no international payout permission exists. Instant receipt is a hard requirement.",
+      "expected_output": "A feasibility and authority conflict rather than a deceptively narrowed feature promise.",
+      "assertions": [
+        "Names unverified integration and missing permission.",
+        "Does not silently exclude instant receipt while claiming the same feature.",
+        "Proposes a bounded next check or decision within planning authority.",
+        "Does not execute payouts, buy access, or mandate a six-week cycle."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use shape-feature, but our only input is that leadership wants an AI dashboard. We do not know who needs it or what decision it supports. Do not collect new data or implement.",
+      "expected_output": "An explicit missing problem frame and narrowly useful framing questions, without fabricating feature value.",
+      "assertions": [
+        "Identifies the unknown beneficiary and outcome.",
+        "Does not invent a valuable dashboard scope or investment agreement.",
+        "Stays within supplied context and read-only authority."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Plan only: customers need to know whether a submitted document was received. Budget is two days, and processing may take several hours. The current candidate screen says Complete immediately on upload, though processing can later fail. Shape a useful small slice.",
+      "expected_output": "A bounded receipt and processing journey showing relevant waiting and failure/recovery without claiming immediate completion.",
+      "assertions": [
+        "Distinguishes received from processed.",
+        "Includes waiting and consequential failure or next-action behavior for this journey.",
+        "Preserves budget as a boundary and avoids inventing every possible state.",
+        "Does not implement or promise observed delivery performance."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Plan only: shape an agent-built CSV export with a one-day investment budget and a Friday deadline. The completion endpoint is a locally checked artifact. One comparable task on model M and harness H took 25 measured minutes including one repair, but this task needs an unverified parser. A hosted endpoint is optional and its account approval may take a day. Forecast only if useful.",
+      "expected_output": "Distinguishes budget, deadline, and uncertain agent forecast using the limited comparison; identifies parser uncertainty and conditional external waiting.",
+      "assertions": [
+        "Uses the actual agent executor and local checked endpoint, with comparison limits and uncertainty.",
+        "Does not default to human-team weeks, universal AI compression, or invented precise duration.",
+        "Treats optional hosted waiting as conditional rather than unavoidable and accounts for dependencies/coordination where relevant."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Plan only: give a rough estimate for our human team to add a reconciled CSV download. One developer owns the API; another can connect the UI only after columns are agreed. Our budget is three developer days; completion means reviewed code. We have no comparable timing evidence.",
+      "expected_output": "An explicitly assumed human-team estimate or range with dependency and coordination uncertainty, separate from the budget.",
+      "assertions": [
+        "Honors the explicit human-team executor rather than replacing it with an agent estimate.",
+        "Distinguishes investment budget from forecast and reviewed-code endpoint.",
+        "States assumptions and dependent work without inventing observed timings or a delivery guarantee."
+      ]
+    }
+  ]
+}

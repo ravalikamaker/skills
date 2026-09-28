@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions, ideas, and experiments
+    url: https://github.com/ravalikamaker/skills/discussions
+    about: Ask usage questions, explore ideas, or share sanitized evaluation results.

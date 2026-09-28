@@ -1,0 +1,59 @@
+{
+  "skill_name": "model-domain",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Read-only modeling: staff call an order confirmed when payment clears; the UI calls it confirmed when inventory is held. The supplied policy allows cancellation before payment clears. The current endpoint permits any UI-confirmed order. Clarify the domain for a cancellation change.",
+      "expected_output": "A scoped vocabulary and rule model showing the conflicting meanings and enforcement gap.",
+      "assertions": [
+        "Keeps the staff and UI meanings distinct.",
+        "Uses the supplied payment boundary with allowed and rejected examples.",
+        "Separates current endpoint enforcement from agreed policy.",
+        "Invents no refund rules and makes no edits."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Model only: a loan can be requested, approved, or disbursed. Policy says disbursement requires approval by a different employee from the requester. The code checks state but not employee identity. No redesign is authorized.",
+      "expected_output": "A bounded state/rule model with the separation invariant and missing enforcement.",
+      "assertions": [
+        "Models requested to approved to disbursed using supplied states.",
+        "Names the different-employee invariant and its supplied source.",
+        "Identifies the identity-check gap without forcing a new architecture.",
+        "Does not implement or broaden the model to the whole lending business."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Read-only: model the return eligibility rules. Note A says within 14 days of receipt; note B says within 30 days of purchase. Neither has approval status. The code uses 30 days. We need to know what must be settled before implementation.",
+      "expected_output": "Conflicting candidate rules, observed implementation, and a decision-changing unresolved boundary.",
+      "assertions": [
+        "Does not declare the code or either note authoritative.",
+        "Explains differing time windows and start events.",
+        "Names the unresolved policy decision.",
+        "Does not invent exceptions or change the system."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use model-domain to assess whether modeling is useful here: rename the already agreed UI label from Submitted to Sent. Its meaning and behavior are unchanged, and no domain rule is disputed.",
+      "expected_output": "A brief determination that no modeling exercise is needed for the settled label edit.",
+      "assertions": [
+        "Preserves the requested label and meaning.",
+        "Does not invent a glossary, state model, or business policy exercise.",
+        "Does not expand the request to an architecture change."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Read-only model: an agreed architecture decision says browser code must not import the payment provider module; only the payment service may use it. Domain rules say a payment has requested and settled states. A project dependency checker enforces the import rule, but its latest result is unavailable. Model only the relevant boundaries.",
+      "expected_output": "A scoped domain model with the agreed architectural boundary and a focused enforcement check remaining unverified.",
+      "assertions": [
+        "Cites the supplied architecture constraint instead of inventing another.",
+        "Names the existing dependency checker as relevant evidence and does not claim it passed.",
+        "Distinguishes state rules, architectural boundary, and current enforcement proof.",
+        "Does not prescribe new governance or redesign the payment system."
+      ]
+    }
+  ]
+}

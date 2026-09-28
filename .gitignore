@@ -1,0 +1,20 @@
+# Python validation environment and bytecode
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local environment secrets; keep the example publishable
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

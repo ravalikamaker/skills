@@ -1,0 +1,18 @@
+body:
+  - type: markdown
+    attributes:
+      value: Ask a usage question with a minimal synthetic example. Do not share secrets, private transcripts, customer data, internal context, or identifying local paths.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What are you trying to do, and where are you stuck?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Relevant setup and attempts
+      description: Skill/source commit, host/version, model/version if exposed, and what you tried. Say unknown where needed. Distinguish installation, discovery, activation, and task outcomes; use sanitized excerpts instead of raw transcripts.
+    validations:
+      required: true

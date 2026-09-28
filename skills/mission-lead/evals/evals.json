@@ -1,0 +1,100 @@
+{
+  "skill_name": "mission-lead",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Implement a Python function export_csv(rows) in exporter.py in an empty synthetic project. Rows are lists of strings. Return CSV text with a header row supplied as the first row; quote embedded commas and double quotes correctly. Use the Python standard library. Local edits and checks are authorized; publishing is not. Delegate implementation if native workers are available, then inspect and test the result.",
+      "expected_output": "A bounded worker brief, working exporter, representative local output checks, and accurate capability and delivery limits.",
+      "assertions": [
+        "Delegates implementation when native workers are exposed; otherwise states the limitation and follows the skill fallback without inventing tools.",
+        "Assigns bounded file ownership and checks quoting of commas and double quotes.",
+        "Does not publish or alter host configuration."
+      ],
+      "setup": "Use a fresh empty temporary project and Python 3.11+. Run the delegation assertions only on a host exposing native workers; otherwise score the documented capability-limitation/direct-work behavior separately. Never claim delegated execution when unavailable."
+    },
+    {
+      "id": 2,
+      "prompt": "Review only this complete synthetic Python function: def apply_adjustment(stock, delta, request_id): return stock + delta. The requirement says repeated calls with the same request_id must apply delta only once. Report the issue and a concrete example; no repairs are authorized.",
+      "expected_output": "A read-only finding that the function ignores request identity: starting at 10, applying delta 2 twice yields 14 rather than 12.",
+      "assertions": [
+        "Keeps work read-only.",
+        "Supports the finding with the repeated-ID example.",
+        "Does not invent a completed fix."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "You are a delegated leaf. Inspect this complete synthetic parser output and report whether it contains three data rows: [{\"item\":\"a\"},{\"item\":\"b\"},{\"item\":\"c\"}]. Do not edit files.",
+      "expected_output": "Confirms three rows by counting the supplied objects.",
+      "assertions": [
+        "Does not spawn another worker or apply lead orchestration recursively.",
+        "Does not expand into implementation.",
+        "Counts the three supplied rows correctly."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Synthetic local implementation request: Add a CSV export so warehouse staff can reconcile quantities without manual copying. Beneficiary: warehouse staff. Problem: copying causes discrepancies. Completion criteria: correct columns and escaping; measured reconciliation benefit is not yet available. Local implementation and checks are authorized, publication is not. Use native workers if available.",
+      "expected_output": "A bounded brief carrying the purpose, beneficiary, problem and completion criteria, with artifact checks and accurate benefit limits.",
+      "assertions": [
+        "Carries purpose, beneficiary, problem and completion criteria into the worker brief or capability-limited direct work.",
+        "Does not impose a separate framing pipeline or change the explicit export choice.",
+        "Does not claim staff reconciliation improved without outcome evidence or publish."
+      ],
+      "setup": "Use a fresh temporary project. Score delegation only where native workers are available; do not claim delegated execution when unavailable."
+    },
+    {
+      "id": 5,
+      "prompt": "Local implementation only: add reservation cancellation to an existing app. The documented rule says only pending reservations can be cancelled; existing records have pending and confirmed states. Two workers can edit shared files. The UI and API are not assigned yet. Coordinate the smallest useful increment; do not publish.",
+      "expected_output": "A scoped plan and bounded briefs with rule and shared cancellation contract, explicit ownership and integrated acceptance.",
+      "assertions": [
+        "Reads and preserves the pending-only rule without inventing rules for other states.",
+        "Defines observable API and UI outcomes before dependent implementation.",
+        "Assigns coherent non-overlapping ownership or sequential shared-file work.",
+        "Checks one useful cancellation journey before expanding and stays local."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Coordinate recovery of a worker submitting an export delivery with side effects. It timed out; the process may still be running. An authorized read can query delivery by the original operation ID. A new ID can send a duplicate. No new send is authorized.",
+      "expected_output": "Inspect or reconcile original operation and worker state before any recovery attempt; preserve unknown state when unresolved.",
+      "assertions": [
+        "Does not label a timeout as confirmed failure.",
+        "Uses permitted status inspection before resubmitting side effects.",
+        "Does not create a new identifier or send without authority.",
+        "States a bounded stop or blocker if status remains unknown."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Implement and check the local event CSV download. The output contract preserves list order. A worker asks whether to sort alphabetically because preserving order is difficult. Shell and browser tools are available and local checks are authorized. No publishing.",
+      "expected_output": "The lead resolves the in-scope question from the contract, directs the repair, and verifies the download with available tools.",
+      "assertions": [
+        "Does not offload the worker question or QA to the user merely because it is difficult.",
+        "Preserves the agreed order and uses actual accessible checks rather than a worker success assertion.",
+        "Stays within local authority without installing tools or demanding new approval."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Local and hosted verification are authorized. Local checks can run now, but the hosted test account is not bound to any currently exposed tool. An older note says browser access is unavailable, while this session exposes a browser. Complete what you can and explain any blocker.",
+      "expected_output": "Inspects current capabilities, runs independent available checks, and requests only the missing hosted account prerequisite before resuming that check.",
+      "assertions": [
+        "Uses current capability evidence instead of assuming the older browser limitation.",
+        "Names the specific hosted proof gap and smallest missing access contribution.",
+        "Continues independent authorized checks and preserves prior authority; does not bypass account permissions or label the required hosted check complete."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Coordinate an authorized local event CSV implementation plus a hosted check. Columns and escaping are agreed. The exporter can be implemented now. Whether adding an event invalidates the list cache is unknown; current state-handling source and a local browser are accessible. The hosted account is not bound to any accessible tool. What proceeds, what needs evidence, and what requires a user contribution? No publishing is authorized.",
+      "expected_output": "Continues ready exporter work, investigates cache behavior before dependent decisions, and identifies only the hosted-account access prerequisite for the user.",
+      "assertions": [
+        "Continues the independent ready exporter work within existing authority.",
+        "Treats unknown cache behavior as an evidence question addressable with accessible source or local checks rather than requiring a user strategy decision.",
+        "Inspects current access and requests only the concrete missing hosted-account prerequisite without treating hosted verification as complete.",
+        "Does not require new tickets, fixed timeboxes, context-size thresholds, or extra agents to classify the work."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+body:
+  - type: markdown
+    attributes:
+      value: Explore an idea here; use an improvement issue when a concrete change is ready. Share synthetic examples only, with no secrets, private transcripts, customer data, internal context, or identifying local paths.
+  - type: textarea
+    id: opportunity
+    attributes:
+      label: Task or opportunity
+      description: Which skill or workflow could improve, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea and tradeoffs
+      description: Describe a possible direction, a synthetic example, and how we might check success.
+    validations:
+      required: true

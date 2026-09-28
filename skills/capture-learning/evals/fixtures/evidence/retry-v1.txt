@@ -1,0 +1,1 @@
+Synthetic fixture revision 1: submit payload twice; two items observed. Request IDs were not recorded. Cause was not isolated.

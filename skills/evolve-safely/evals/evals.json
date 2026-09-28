@@ -1,0 +1,81 @@
+{
+  "skill_name": "evolve-safely",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Plan only: an HTTP API currently returns amount as a decimal string. We want integer minor units. An older client must remain functional during transition, another client can update next week, and production consumer inventory is incomplete. Existing data also contains decimal strings.",
+      "expected_output": "A compatibility transition with consumer/data discovery, coexistence checks, retirement criteria, and qualified recovery.",
+      "assertions": [
+        "Preserves the required older-client contract during transition.",
+        "Marks unknown consumers instead of assuming every caller is in the repository.",
+        "Uses appropriate staged expansion/migration/removal and concrete retirement conditions.",
+        "Does not promise code rollback reverses converted data or mutate production."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Implement locally in a temporary synthetic Python project: api.py has amount_for_legacy(cents) returning a decimal string; an old test requires amount_for_legacy(123) == \"1.23\". Add amount_for_new(cents) returning an integer while preserving the legacy function; do not change stored data or deploy.",
+      "expected_output": "A scoped implementation preserving the old contract and adding the authorized new contract, with focused checks.",
+      "assertions": [
+        "Implements the authorized local addition rather than returning only a plan.",
+        "Preserves the legacy decimal-string output for representative amounts.",
+        "Checks the new integer output and old consumer behavior.",
+        "Does not invent a multi-phase migration or deploy."
+      ],
+      "setup": "Copy evals/fixtures/api/ contents into a fresh temporary project outside this repository. Use that directory as the workspace; the scoped local addition is authorized. Preserve existing legacy tests and add relevant new-contract checks. Do not expose assertions or expected_output to the executor.",
+      "files": [
+        "evals/fixtures/api/api.py",
+        "evals/fixtures/api/test_api.py"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review transition readiness only: all known consumers have updated, but one unmonitored integration may still use the old field. No usage has appeared in a log covering only the known clients. A data conversion check has not run. May we retire the old field now?",
+      "expected_output": "Insufficient retirement evidence with unknown-consumer and data-check gaps.",
+      "assertions": [
+        "Does not infer absence of unknown consumers from partial quiet logs.",
+        "Names missing data verification and integration evidence.",
+        "Distinguishes readiness review from authorized destructive retirement.",
+        "Does not remove the field or claim migration complete."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Plan only: a migration rewrites values in place and new-version writers immediately use the converted schema. The team says rollback means reverting the application commit. No restore procedure has been tested. Assess recovery and the checks needed before application.",
+      "expected_output": "Explicit recovery limits and options without claiming code revert undoes data or later writes.",
+      "assertions": [
+        "Identifies converted data and new writes as consequences outside code rollback.",
+        "Names restore or forward-correction options as unverified unless established.",
+        "Proposes relevant invariant and transition checks rather than a generic assurance.",
+        "Does not apply the migration or fabricate a tested recovery."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Use evolve-safely for this authorized local change in the provided synthetic project: rename private _double to _twice in helpers.py and update its two callers. Public API, data, and behavior must remain unchanged; existing focused tests cover both callers. Implement the rename without external changes.",
+      "expected_output": "A proportional atomic change and focused verification without migration ceremony.",
+      "assertions": [
+        "Preserves public behavior and both private callers.",
+        "Does not require expand-migrate-contract, a new compatibility layer, or consumer governance.",
+        "Completes authorized local work and runs appropriate existing checks.",
+        "Does not claim live deployment or data migration."
+      ],
+      "setup": "Copy evals/fixtures/rename/ contents into a fresh temporary project outside this repository. Use that directory as the workspace; the scoped private-helper rename is authorized. Do not expose assertions or expected_output to the executor.",
+      "files": [
+        "evals/fixtures/rename/helpers.py",
+        "evals/fixtures/rename/test_helpers.py"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Review only two proposed synthetic refactors. Adapter A centralizes minor-unit-to-decimal conversion and rounding used by three legacy callers; removing it makes those callers repeat the rules. Wrapper B only forwards one private helper for its sole caller and changes no inputs, outputs, errors, or ownership. The team wants fewer layers and cites line counts as proof. Assess the proposals without editing.",
+      "expected_output": "Explains where complexity would move for each removal and assesses concrete contracts rather than using line count or a layer mandate.",
+      "assertions": [
+        "Recognizes that removing A distributes the existing conversion rule across callers rather than eliminating its complexity.",
+        "Considers direct invocation for B after checking its caller contract rather than preserving it for hypothetical needs.",
+        "Uses the concrete examples and behavior evidence rather than declaring fewer layers or lines inherently better.",
+        "Keeps the review read-only."
+      ]
+    }
+  ]
+}

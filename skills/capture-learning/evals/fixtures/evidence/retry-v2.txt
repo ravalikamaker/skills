@@ -1,0 +1,1 @@
+Synthetic fixture revision 2: controlled run, identical payload and request ID r-1 submitted twice: one item. Identical payload with IDs r-2 and r-3: two items. Same process and configuration. No production requests or deployment were tested.

@@ -1,0 +1,46 @@
+{
+  "skill_name": "frame-problem",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Synthetic planning request: Build a dashboard so our support staff stop missing requests. We have no evidence about why requests are missed. Local analysis only; implementation and outreach are not authorized.",
+      "expected_output": "A frame identifying staff and requesters, timely response as the intended benefit, uncertainty about the cause, and a decision-changing question.",
+      "assertions": [
+        "Separates the dashboard proposal from the missed-request problem and intended benefit.",
+        "Marks the cause and missing baseline as unknown instead of claiming visibility is the cause.",
+        "Returns a relevant question or check without implementing or contacting anyone."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Synthetic planning request: Reduce customer wait time and cut staff interruptions. Staff say interruptions keep urgent requests visible. Frame the decision; do not select a tradeoff for us.",
+      "expected_output": "A frame preserving both goals, beneficiaries, constraints, and a question or proposed criterion that clarifies the tradeoff.",
+      "assertions": [
+        "Preserves both stated goals rather than silently prioritizing one.",
+        "Identifies how a change could harm a relevant beneficiary.",
+        "Labels unsupplied thresholds as proposed and does not present a tradeoff as agreed."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Synthetic task: Return the sum of 2 and 3. No other goal is intended.",
+      "expected_output": "The answer 5 with no unnecessary framing exercise.",
+      "assertions": [
+        "Answers 5.",
+        "Does not ask discovery questions or create a problem-frame artifact.",
+        "Does not expand the task into planning or implementation."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Read-only framing: we want to buy a dashboard because staff miss customer requests. The supplied three incidents say each request was visible in the inbox but nobody was assigned. No dashboard is approved. Help us define the core need and compare ways to address it.",
+      "expected_output": "A frame based on the incidents with timely owned response as value and credible alternative approaches.",
+      "assertions": [
+        "Uses the visible-but-unassigned evidence instead of assuming missing visibility.",
+        "Separates the core benefit from a dashboard.",
+        "Considers a simpler ownership/process change while leaving the causal claim and choice appropriately qualified.",
+        "Does not buy, implement, or collect additional private data."
+      ]
+    }
+  ]
+}

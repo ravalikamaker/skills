@@ -1,0 +1,25 @@
+body:
+  - type: markdown
+    attributes:
+      value: Share a workflow or experiment using synthetic examples. Keep raw outputs outside the repository. Do not share secrets, private transcripts, customer data, internal context, or identifying local paths; review linked artifacts too.
+  - type: textarea
+    id: experiment
+    attributes:
+      label: What did you try?
+      description: Describe the task, skill/source commit, fixture IDs if applicable, and starting conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Host and model
+      description: Include host/version, provider/model/version if exposed, and relevant settings. Separate requested settings from observed execution; say unknown where needed.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results and limits
+      description: Summarize with/without-skill outcomes, attempts/failures, and what remains untested. Distinguish structural validation, installation/discovery, activation, and runtime results. If there is no baseline, say so; one run is a smoke check.
+    validations:
+      required: true

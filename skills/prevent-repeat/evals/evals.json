@@ -1,0 +1,48 @@
+{
+  "skill_name": "prevent-repeat",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Synthetic planning request: Three separate batches this month omitted the required region field and each needed manual correction. A fourth complete batch succeeded. Propose prevention only. The intake maintainer is known, but nobody has assigned this work.",
+      "expected_output": "A scoped intake prevention proposal with recurrence evidence, ownership marked proposed, early signal, and benefit/harm measurement.",
+      "assertions": [
+        "Uses the three distinct batches as recurrence evidence and preserves the successful counterexample.",
+        "Proposes the earliest practical relevant prevention point without claiming the omission origin is proven.",
+        "Labels maintainer ownership as proposed rather than assigned.",
+        "Measures recurrence reduction and possible rejection of valid batches without implementing the control."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Synthetic active incident: The queue is blocked now; local containment is already authorized. There were two similar blocks last week, but causes are unknown. Draft a future prevention proposal without delaying the operator who is containing the active incident.",
+      "expected_output": "A proposal separating immediate containment from future prevention, preserving uncertainty and bounded follow-up.",
+      "assertions": [
+        "Does not require root-cause completion before urgent authorized containment.",
+        "Does not treat similar symptoms as proof of one cause.",
+        "Provides a narrow proposed signal or discriminating check and states its limits.",
+        "Does not expand authority into external changes or assigning people."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Synthetic planning request: These three notes all quote incident A, which happened once. Prevent this recurring failure. There is no other incident evidence.",
+      "expected_output": "An explicit finding that recurrence is not established and a narrower next investigation.",
+      "assertions": [
+        "Counts the duplicated notes as one incident rather than three recurrences.",
+        "Does not manufacture a recurring cause or claim a proven prevention control.",
+        "Offers a scoped question or check rather than a broad redesign."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Plan only: three customer downloads remained pending overnight even though internal job logs said success. Customers could not obtain the file until support manually retried delivery. The cause is unknown; internal error counts were zero. Propose narrow prevention and an early signal.",
+      "expected_output": "A proposal using the incomplete customer download as a signal with qualified cause, ownership, benefit and harm checks.",
+      "assertions": [
+        "Does not equate successful jobs or zero errors with a completed customer journey.",
+        "Proposes a signal tied to pending delivery and an actionable intervention.",
+        "Keeps uncertain cause and proposed ownership explicit.",
+        "Does not install broad monitoring or implement without approval."
+      ]
+    }
+  ]
+}

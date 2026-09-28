@@ -1,0 +1,629 @@
+{
+  "description": "Metadata-only initial-routing fixture for thirteen independently installable skills. Each case has one expected skill or null for none; focus identifies the boundary being probed, not an expected activation. Each skill has three explicit or implicit positive cases and three near-miss negatives. A negative for the focus skill may route to a neighboring skill. Select only the single best initial skill, not every skill that might be useful later. Negatives include questions about named skills and bounded tasks outside their scope. These fixtures do not establish installation, host loading, observed skill activation, task execution, or live host behavior.",
+  "cases": [
+    {
+      "id": "lead-01",
+      "focus": "mission-lead",
+      "kind": "explicit",
+      "prompt": "Use mission-lead to coordinate the work on adding a search screen, connecting it to the existing data, and checking that the whole flow works. Delegate the implementation pieces and carry this through locally.",
+      "expected_skill": "mission-lead",
+      "rationale": "Explicitly invokes coordination and delegation for an authorized multi-step implementation."
+    },
+    {
+      "id": "lead-02",
+      "focus": "mission-lead",
+      "kind": "implicit",
+      "prompt": "The export feature needs a settings panel, a background job, and a download page. Please organize the implementation across those pieces, assign the work, and bring it together into a working local feature.",
+      "expected_skill": "mission-lead",
+      "rationale": "Requests coordinated ownership and delegated implementation across a substantial feature."
+    },
+    {
+      "id": "lead-03",
+      "focus": "mission-lead",
+      "kind": "implicit",
+      "prompt": "Take charge of moving our three existing importers onto the shared validation interface. Split up the independent changes, resolve integration issues, and get the migration working end to end.",
+      "expected_skill": "mission-lead",
+      "rationale": "Implicitly asks for orchestration of interdependent implementation and integration work."
+    },
+    {
+      "id": "lead-04",
+      "focus": "mission-lead",
+      "kind": "negative",
+      "prompt": "What kinds of tasks is mission-lead intended for?",
+      "expected_skill": null,
+      "rationale": "Asks about the skill rather than invoking it to manage work."
+    },
+    {
+      "id": "lead-05",
+      "focus": "mission-lead",
+      "kind": "negative",
+      "prompt": "What does CSV stand for?",
+      "expected_skill": null,
+      "rationale": "A self-contained factual question needs a direct answer without orchestration."
+    },
+    {
+      "id": "lead-06",
+      "focus": "mission-lead",
+      "kind": "negative",
+      "prompt": "Rewrite this button label to sound friendlier: Submit request.",
+      "expected_skill": null,
+      "rationale": "A small self-contained wording request does not require a coordination workflow."
+    },
+    {
+      "id": "verify-01",
+      "focus": "verify-work",
+      "kind": "explicit",
+      "prompt": "Use verify-work on the completed date-filter change. Check the actual diff against the acceptance criteria and tell me whether the implementation is correct.",
+      "expected_skill": "verify-work",
+      "rationale": "Explicitly requests evidence-based verification of completed work against requirements."
+    },
+    {
+      "id": "verify-02",
+      "focus": "verify-work",
+      "kind": "explicit",
+      "prompt": "Run verify-work on the finished pagination fix. Confirm that the final page, empty results, and page-size changes behave as required, and report any remaining gaps.",
+      "expected_skill": "verify-work",
+      "rationale": "Explicit invocation focuses on correctness and completion of an existing fix."
+    },
+    {
+      "id": "verify-03",
+      "focus": "verify-work",
+      "kind": "implicit",
+      "prompt": "The password visibility toggle is implemented. Before I accept it, inspect what was actually changed and check that it meets the ticket, including keyboard behavior. Give me a verdict with evidence.",
+      "expected_skill": "verify-work",
+      "rationale": "Requests acceptance verification of a bounded completed change without asking for implementation orchestration."
+    },
+    {
+      "id": "verify-04",
+      "focus": "verify-work",
+      "kind": "negative",
+      "prompt": "What evidence does verify-work usually include in its report?",
+      "expected_skill": null,
+      "rationale": "A question about the skill is not a request to verify any completed work."
+    },
+    {
+      "id": "verify-05",
+      "focus": "verify-work",
+      "kind": "negative",
+      "prompt": "I have not started building the file uploader yet. Suggest acceptance criteria for handling empty files and interrupted uploads.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Requests intended observable acceptance behavior before implementation, rather than verification of completed work."
+    },
+    {
+      "id": "verify-06",
+      "focus": "verify-work",
+      "kind": "negative",
+      "prompt": "Explain the difference between a unit test and an integration test in plain language.",
+      "expected_skill": null,
+      "rationale": "Requests a general explanation rather than verification of actual work."
+    },
+    {
+      "id": "handoff-01",
+      "focus": "session-handoff",
+      "kind": "explicit",
+      "prompt": "Use session-handoff before I close this session. The migration is only halfway done; save the current branch, completed steps, unresolved failures, and exact next action so I can resume tomorrow.",
+      "expected_skill": "session-handoff",
+      "rationale": "Explicitly requests preservation of active work for a later session."
+    },
+    {
+      "id": "handoff-02",
+      "focus": "session-handoff",
+      "kind": "implicit",
+      "prompt": "Another engineer is taking over the unfinished settings redesign this afternoon. Prepare a checkpoint with the current files, decisions, validation so far, and what they need to do next.",
+      "expected_skill": "session-handoff",
+      "rationale": "An ownership transfer of unfinished work needs resumable state and next steps."
+    },
+    {
+      "id": "handoff-03",
+      "focus": "session-handoff",
+      "kind": "implicit",
+      "prompt": "We are running out of room in this chat and the bug is still unresolved. Write down enough working state for a fresh session to continue from here without repeating the investigation.",
+      "expected_skill": "session-handoff",
+      "rationale": "Requests continuity across sessions for an active investigation."
+    },
+    {
+      "id": "handoff-04",
+      "focus": "session-handoff",
+      "kind": "negative",
+      "prompt": "How is session-handoff different from a normal summary?",
+      "expected_skill": null,
+      "rationale": "Discusses the skill without requesting a handoff artifact."
+    },
+    {
+      "id": "handoff-05",
+      "focus": "session-handoff",
+      "kind": "negative",
+      "prompt": "The project is finished and accepted. Write a short summary of the delivered features for the release announcement.",
+      "expected_skill": null,
+      "rationale": "A completed-project announcement does not preserve active state for resumption."
+    },
+    {
+      "id": "handoff-06",
+      "focus": "session-handoff",
+      "kind": "negative",
+      "prompt": "Summarize these meeting notes into three bullets for me.",
+      "expected_skill": null,
+      "rationale": "An ordinary content summary does not request session or ownership continuity."
+    },
+    {
+      "id": "learning-01",
+      "focus": "capture-learning",
+      "kind": "explicit",
+      "prompt": "Use capture-learning to record what we established today: the import failed with a blank header, succeeded after we rejected blank headers, and the regression check now passes. Save the evidence and the limits of that conclusion.",
+      "expected_skill": "capture-learning",
+      "rationale": "Explicit invocation asks to retain a useful lesson supported by observed evidence."
+    },
+    {
+      "id": "learning-02",
+      "focus": "capture-learning",
+      "kind": "explicit",
+      "prompt": "Please use capture-learning to save our tentative idea that the retry delay helped. We only tried it once, so mark it as unconfirmed and include what we would need to test before relying on it.",
+      "expected_skill": "capture-learning",
+      "rationale": "An explicitly requested uncertain learning note is valid when uncertainty and validation limits are retained."
+    },
+    {
+      "id": "learning-03",
+      "focus": "capture-learning",
+      "kind": "implicit",
+      "prompt": "We reproduced the failure three times when filenames contained trailing spaces, and trimming them fixed all three cases. Keep this as a reusable lesson for future import work, with the reproduction details.",
+      "expected_skill": "capture-learning",
+      "rationale": "Implicitly requests durable retention of an evidenced lesson for future work."
+    },
+    {
+      "id": "learning-04",
+      "focus": "capture-learning",
+      "kind": "negative",
+      "prompt": "Does capture-learning store guesses as facts, or can it preserve uncertainty?",
+      "expected_skill": null,
+      "rationale": "Asks about the skill behavior without authorizing a learning note."
+    },
+    {
+      "id": "learning-05",
+      "focus": "capture-learning",
+      "kind": "negative",
+      "prompt": "Could a cache cause intermittent request timeouts? Explain the possible connection in one paragraph.",
+      "expected_skill": null,
+      "rationale": "A bounded conceptual question about a possible root cause asks for a direct explanation, not project investigation or retention of an established lesson."
+    },
+    {
+      "id": "learning-06",
+      "focus": "capture-learning",
+      "kind": "negative",
+      "prompt": "Give me a quick progress update on the import fix: what have you checked so far, and what is still failing?",
+      "expected_skill": null,
+      "rationale": "Requests current progress reporting rather than durable lesson capture."
+    },
+    {
+      "id": "frame-01",
+      "focus": "frame-problem",
+      "kind": "explicit",
+      "prompt": "Use frame-problem on our idea to replace the booking form with a chatbot. We have not established whose problem this solves; clarify the beneficiary, benefit, constraints, assumptions, and what success would mean.",
+      "expected_skill": "frame-problem",
+      "rationale": "The request explicitly invokes problem framing before committing to a proposed solution."
+    },
+    {
+      "id": "frame-02",
+      "focus": "frame-problem",
+      "kind": "implicit",
+      "prompt": "The team says we need a dashboard, but we disagree about which users need it or what they need to accomplish. Turn that solution-first request into a clear problem statement and success conditions before choosing features.",
+      "expected_skill": "frame-problem",
+      "rationale": "Requests clarification of beneficiary and intended benefit rather than implementation or an experiment."
+    },
+    {
+      "id": "frame-03",
+      "focus": "frame-problem",
+      "kind": "implicit",
+      "prompt": "Support wants faster responses, customers want fewer mistakes, and operations cannot add staff. Help us define the actual problem, constraints, and assumptions we need to settle before deciding what to change.",
+      "expected_skill": "frame-problem",
+      "rationale": "Competing needs and an unclear outcome require a shared problem frame first."
+    },
+    {
+      "id": "frame-04",
+      "focus": "frame-problem",
+      "kind": "negative",
+      "prompt": "What information does frame-problem usually ask for?",
+      "expected_skill": null,
+      "rationale": "Asks about the skill without invoking a framing task."
+    },
+    {
+      "id": "frame-05",
+      "focus": "frame-problem",
+      "kind": "negative",
+      "prompt": "Rewrite this agreed problem statement in one shorter sentence without changing its meaning: New members cannot find the joining instructions in the welcome email.",
+      "expected_skill": null,
+      "rationale": "A bounded rewrite of an already defined problem requires no framing workflow."
+    },
+    {
+      "id": "frame-06",
+      "focus": "frame-problem",
+      "kind": "negative",
+      "prompt": "What does the word beneficiary mean in a project brief?",
+      "expected_skill": null,
+      "rationale": "A vocabulary explanation is not a request to frame a project problem."
+    },
+    {
+      "id": "experiment-01",
+      "focus": "design-experiment",
+      "kind": "explicit",
+      "prompt": "Use design-experiment to plan a small test of our hypothesis that a shorter signup form helps new members complete registration. Set a budget, benefit and harm measures, and an advance decision rule; do not run the test.",
+      "expected_skill": "design-experiment",
+      "rationale": "Explicitly asks for a bounded hypothesis-test plan before investment."
+    },
+    {
+      "id": "experiment-02",
+      "focus": "design-experiment",
+      "kind": "implicit",
+      "prompt": "We know the onboarding problem and target group. Before funding a rebuild, plan the smallest test of whether a checklist helps them finish setup, including comparison, observation window, and stop conditions.",
+      "expected_skill": "design-experiment",
+      "rationale": "A defined problem and proposed change need an experiment plan, not renewed problem framing."
+    },
+    {
+      "id": "experiment-03",
+      "focus": "design-experiment",
+      "kind": "implicit",
+      "prompt": "The hypothesis is that a reminder reduces missed appointments. Sketch a two-week pilot with a clear comparison, burden limits, measures, and what results would justify continuing or stopping.",
+      "expected_skill": "design-experiment",
+      "rationale": "Requests planning a limited experiment with criteria fixed before results exist."
+    },
+    {
+      "id": "experiment-04",
+      "focus": "design-experiment",
+      "kind": "negative",
+      "prompt": "Does design-experiment run pilots itself or only plan them?",
+      "expected_skill": null,
+      "rationale": "A question about capabilities does not invoke experiment planning."
+    },
+    {
+      "id": "experiment-05",
+      "focus": "design-experiment",
+      "kind": "negative",
+      "prompt": "Calculate the completion rate from 18 completed registrations out of 24 attempts.",
+      "expected_skill": null,
+      "rationale": "A simple calculation does not require designing an experiment."
+    },
+    {
+      "id": "experiment-06",
+      "focus": "design-experiment",
+      "kind": "negative",
+      "prompt": "Explain what a control group is in one paragraph.",
+      "expected_skill": null,
+      "rationale": "A conceptual explanation does not request a concrete experiment plan."
+    },
+    {
+      "id": "prevent-01",
+      "focus": "prevent-repeat",
+      "kind": "explicit",
+      "prompt": "Use prevent-repeat on these three missed handoffs. The records show no one acknowledged ownership before the shift ended. Propose a prevention point, owner, and benefit and harm measures without changing the process yet.",
+      "expected_skill": "prevent-repeat",
+      "rationale": "Explicitly requests prevention of a recurring failure using evidence and a bounded proposal."
+    },
+    {
+      "id": "prevent-02",
+      "focus": "prevent-repeat",
+      "kind": "implicit",
+      "prompt": "The last four release checks missed the same stale configuration because the checklist appears after deployment. Use those incident records to propose where prevention belongs, who could own it, and how to check whether it helps or adds burden.",
+      "expected_skill": "prevent-repeat",
+      "rationale": "Recurring failure asks for a prevention mechanism rather than only a saved lesson."
+    },
+    {
+      "id": "prevent-03",
+      "focus": "prevent-repeat",
+      "kind": "implicit",
+      "prompt": "Requests have repeatedly stalled when the intake form is incomplete. The three reports disagree on whether the form or ownership caused it. Separate what we know from guesses and propose prevention options with owners and measures.",
+      "expected_skill": "prevent-repeat",
+      "rationale": "Recurring-failure prevention can proceed with explicit uncertainty and competing explanations."
+    },
+    {
+      "id": "prevent-04",
+      "focus": "prevent-repeat",
+      "kind": "negative",
+      "prompt": "What kinds of repeated failures is prevent-repeat meant for?",
+      "expected_skill": null,
+      "rationale": "Asks about the skill rather than requesting a prevention proposal."
+    },
+    {
+      "id": "prevent-05",
+      "focus": "prevent-repeat",
+      "kind": "negative",
+      "prompt": "I mistyped this filename once. Correct reciept.csv to receipt.csv in this sentence only.",
+      "expected_skill": null,
+      "rationale": "A one-off literal correction needs no recurring-failure analysis or process proposal."
+    },
+    {
+      "id": "prevent-06",
+      "focus": "prevent-repeat",
+      "kind": "negative",
+      "prompt": "Explain the difference between prevention and detection with a simple example.",
+      "expected_skill": null,
+      "rationale": "A general distinction does not ask for an evidenced prevention plan."
+    },
+    {
+      "id": "connect-01",
+      "focus": "connect-insights",
+      "kind": "explicit",
+      "prompt": "Use connect-insights on the attached interview notes, support reports, and usage summary. Identify supported patterns and contradictions, trace each to its source, and consider alternative explanations; no pattern is a valid result.",
+      "expected_skill": "connect-insights",
+      "rationale": "Explicitly requests provenance-preserving synthesis across multiple sources."
+    },
+    {
+      "id": "connect-02",
+      "focus": "connect-insights",
+      "kind": "implicit",
+      "prompt": "Compare these findings from three separate onboarding studies. Which claims reinforce or contradict each other, what other explanations fit, and what cannot be inferred from the evidence? Keep the source for every connection.",
+      "expected_skill": "connect-insights",
+      "rationale": "Requests multi-source synthesis and uncertainty rather than verification of a finished artifact."
+    },
+    {
+      "id": "connect-03",
+      "focus": "connect-insights",
+      "kind": "implicit",
+      "prompt": "Here are dated field notes from two teams and a customer survey. Look for useful connections across them, distinguish shared observations from speculative explanations, and say if there is no defensible common pattern.",
+      "expected_skill": "connect-insights",
+      "rationale": "Asks for cross-source insight with provenance and permission to find no pattern."
+    },
+    {
+      "id": "connect-04",
+      "focus": "connect-insights",
+      "kind": "negative",
+      "prompt": "How does connect-insights handle contradictory sources?",
+      "expected_skill": null,
+      "rationale": "A question about the skill does not invoke synthesis."
+    },
+    {
+      "id": "connect-05",
+      "focus": "connect-insights",
+      "kind": "negative",
+      "prompt": "Summarize this single support report in three bullets without adding interpretations.",
+      "expected_skill": null,
+      "rationale": "A bounded single-source summary needs no multi-source synthesis."
+    },
+    {
+      "id": "connect-06",
+      "focus": "connect-insights",
+      "kind": "negative",
+      "prompt": "Put these three filenames in alphabetical order: notes-c.txt, notes-a.txt, notes-b.txt.",
+      "expected_skill": null,
+      "rationale": "Multiple items alone do not create an insight-synthesis task."
+    },
+    {
+      "id": "domain-01",
+      "focus": "model-domain",
+      "kind": "explicit",
+      "prompt": "Use model-domain to clarify booking vocabulary, permitted states, and cancellation rules from our policy and examples before we implement refunds.",
+      "expected_skill": "model-domain",
+      "rationale": "Explicitly requests an evidence-backed scoped domain model."
+    },
+    {
+      "id": "domain-02",
+      "focus": "model-domain",
+      "kind": "implicit",
+      "prompt": "Staff and the API use approved to mean different things. Map the meanings, agreed invariants, state transitions, and unresolved rules in this lending flow; show where current checks disagree.",
+      "expected_skill": "model-domain",
+      "rationale": "Business meanings and rule/enforcement differences need domain modeling."
+    },
+    {
+      "id": "domain-03",
+      "focus": "model-domain",
+      "kind": "implicit",
+      "prompt": "We cannot agree whether membership ends at cancellation request or paid-period expiry. Read these decisions and examples, separate accepted rules from proposals, and model the relevant lifecycle without inventing a policy.",
+      "expected_skill": "model-domain",
+      "rationale": "Requests domain lifecycle and policy uncertainty rather than feature investment planning."
+    },
+    {
+      "id": "domain-04",
+      "focus": "model-domain",
+      "kind": "negative",
+      "prompt": "What does model-domain produce?",
+      "expected_skill": null,
+      "rationale": "Asks about a skill without invoking its workflow."
+    },
+    {
+      "id": "domain-05",
+      "focus": "model-domain",
+      "kind": "negative",
+      "prompt": "Explain what a database foreign key does in one sentence.",
+      "expected_skill": null,
+      "rationale": "A general technical explanation does not need a business model."
+    },
+    {
+      "id": "domain-06",
+      "focus": "model-domain",
+      "kind": "negative",
+      "prompt": "Our cancellation rule is agreed: unpaid requests cancel; paid requests reject. Turn that rule into representative input and observable outcome examples for implementers.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Settled rule needs concrete behavior specification rather than further modeling."
+    },
+    {
+      "id": "shape-01",
+      "focus": "shape-feature",
+      "kind": "explicit",
+      "prompt": "Use shape-feature to bound CSV reconciliation export for an understood staff need. We have two days; propose the rough approach, risks, exclusions, and smallest useful end-to-end slice.",
+      "expected_skill": "shape-feature",
+      "rationale": "Explicit shaping request uses an investment boundary for a known need."
+    },
+    {
+      "id": "shape-02",
+      "focus": "shape-feature",
+      "kind": "implicit",
+      "prompt": "Customers need to see why their existing claim is blocked; that problem is established. Before we commit to a week of work, outline a credible feature, risky dependencies, non-goals, and the first useful journey we could deliver.",
+      "expected_skill": "shape-feature",
+      "rationale": "Plans feature approach and bounded scope for an understood problem."
+    },
+    {
+      "id": "shape-03",
+      "focus": "shape-feature",
+      "kind": "implicit",
+      "prompt": "We have agreed why operators need manual retry and have a three-day budget. Shape the candidate into a limited approach with deliberate tradeoffs and an observable first slice; do not build it yet.",
+      "expected_skill": "shape-feature",
+      "rationale": "Requests a feature investment proposal, not orchestration or experiment design."
+    },
+    {
+      "id": "shape-04",
+      "focus": "shape-feature",
+      "kind": "negative",
+      "prompt": "How is shape-feature different from a task checklist?",
+      "expected_skill": null,
+      "rationale": "A question about a skill does not invoke planning."
+    },
+    {
+      "id": "shape-05",
+      "focus": "shape-feature",
+      "kind": "negative",
+      "prompt": "Leadership wants a dashboard but no one knows who needs it or what decision it helps. Clarify the problem and benefit before choosing features.",
+      "expected_skill": "frame-problem",
+      "rationale": "The unknown need requires framing before feature shaping."
+    },
+    {
+      "id": "shape-06",
+      "focus": "shape-feature",
+      "kind": "negative",
+      "prompt": "We believe reminders reduce missed appointments. Plan a limited comparison to find out whether that assumption is true before investing.",
+      "expected_skill": "design-experiment",
+      "rationale": "Requests a discriminating test of benefit rather than bounding a feature approach."
+    },
+    {
+      "id": "behavior-01",
+      "focus": "specify-behavior",
+      "kind": "explicit",
+      "prompt": "Use specify-behavior before implementation: cancellation succeeds before payment and rejects after payment. Show observable success, rejection, and timing-boundary examples; keep undecided rules visible.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Explicitly asks for representative intended behavior examples."
+    },
+    {
+      "id": "behavior-02",
+      "focus": "specify-behavior",
+      "kind": "implicit",
+      "prompt": "The discount rule is agreed but implementers interpret it differently. Give concrete inputs and expected observable totals at, below, and above the eligibility threshold, without choosing internal storage.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Concrete intended outcomes clarify a settled rule before implementation."
+    },
+    {
+      "id": "behavior-03",
+      "focus": "specify-behavior",
+      "kind": "implicit",
+      "prompt": "Before building export, spell out examples of staff exporting their own team, another team being rejected, and an empty result whose behavior still needs a decision.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Representative success, rejection, and unresolved boundaries need specification."
+    },
+    {
+      "id": "behavior-04",
+      "focus": "specify-behavior",
+      "kind": "negative",
+      "prompt": "Does specify-behavior require Gherkin?",
+      "expected_skill": null,
+      "rationale": "A tool question about the skill is not a specification task."
+    },
+    {
+      "id": "behavior-05",
+      "focus": "specify-behavior",
+      "kind": "negative",
+      "prompt": "The cancellation feature is finished. Check the actual artifact against our unpaid-success and paid-rejection rules, then give me an acceptance verdict.",
+      "expected_skill": "verify-work",
+      "rationale": "Completed artifact requires verification rather than intended behavior design."
+    },
+    {
+      "id": "behavior-06",
+      "focus": "specify-behavior",
+      "kind": "negative",
+      "prompt": "What does HTTP status 404 mean?",
+      "expected_skill": null,
+      "rationale": "A self-contained factual question needs no behavior specification."
+    },
+    {
+      "id": "diagnose-01",
+      "focus": "diagnose-failure",
+      "kind": "explicit",
+      "prompt": "Use diagnose-failure on an import that sometimes stalls. Separate observed symptoms from hypotheses, keep failed attempts, and choose a check that distinguishes likely causes; no fixes yet.",
+      "expected_skill": "diagnose-failure",
+      "rationale": "Explicit failure investigation with uncertainty and discriminating checks."
+    },
+    {
+      "id": "diagnose-02",
+      "focus": "diagnose-failure",
+      "kind": "implicit",
+      "prompt": "Requests started timing out after a deployment, but retry helped only once and a restart changed nothing. Investigate what the evidence supports, compare plausible explanations, and tell me the next useful diagnostic check.",
+      "expected_skill": "diagnose-failure",
+      "rationale": "Investigates an unsettled failure cause rather than verifying acceptance or proposing recurring controls."
+    },
+    {
+      "id": "diagnose-03",
+      "focus": "diagnose-failure",
+      "kind": "implicit",
+      "prompt": "A transfer timed out and we do not know whether it completed. Investigate the available operation evidence before deciding on recovery; distinguish unknown status from failure and avoid a duplicate transfer.",
+      "expected_skill": "diagnose-failure",
+      "rationale": "Unexplained operation outcome needs evidence-based diagnosis and cautious recovery."
+    },
+    {
+      "id": "diagnose-04",
+      "focus": "diagnose-failure",
+      "kind": "negative",
+      "prompt": "What is diagnose-failure intended for?",
+      "expected_skill": null,
+      "rationale": "Asks about a skill without invoking an investigation."
+    },
+    {
+      "id": "diagnose-05",
+      "focus": "diagnose-failure",
+      "kind": "negative",
+      "prompt": "The repair is complete. Check its actual outputs against the agreed acceptance rules and give an evidence-based verdict.",
+      "expected_skill": "verify-work",
+      "rationale": "Acceptance of a completed repair is verification rather than diagnosis."
+    },
+    {
+      "id": "diagnose-06",
+      "focus": "diagnose-failure",
+      "kind": "negative",
+      "prompt": "Three distinct incidents have the same established missing-owner cause. Propose a prevention point, accountable owner candidate, and benefit and harm measures without implementing.",
+      "expected_skill": "prevent-repeat",
+      "rationale": "Established recurrence asks for prevention rather than further failure diagnosis."
+    },
+    {
+      "id": "evolve-01",
+      "focus": "evolve-safely",
+      "kind": "explicit",
+      "prompt": "Use evolve-safely to plan replacing our public decimal-string amount field with integer minor units. Older clients remain active; include compatibility, data migration checks, retirement evidence, and recovery limits.",
+      "expected_skill": "evolve-safely",
+      "rationale": "Explicit substantial contract evolution with mixed consumers and data implications."
+    },
+    {
+      "id": "evolve-02",
+      "focus": "evolve-safely",
+      "kind": "implicit",
+      "prompt": "Implement a local API compatibility transition while old consumers continue using the legacy response. Find the affected callers, preserve agreed old behavior, verify the new form, and state when the legacy path can safely retire.",
+      "expected_skill": "evolve-safely",
+      "rationale": "Requests compatibility-preserving execution rather than generic coordination."
+    },
+    {
+      "id": "evolve-03",
+      "focus": "evolve-safely",
+      "kind": "implicit",
+      "prompt": "Before we apply the schema conversion, assess current readers and writers, mixed-version behavior, migration validation, and recovery options. A code revert may not undo converted data; no migration is authorised yet.",
+      "expected_skill": "evolve-safely",
+      "rationale": "Substantial schema transition requires consumer/data and recovery reasoning."
+    },
+    {
+      "id": "evolve-04",
+      "focus": "evolve-safely",
+      "kind": "negative",
+      "prompt": "Does evolve-safely always require multiple migration phases?",
+      "expected_skill": null,
+      "rationale": "A question about the skill does not invoke a transition."
+    },
+    {
+      "id": "evolve-05",
+      "focus": "evolve-safely",
+      "kind": "negative",
+      "prompt": "Rename this private local variable from row to item in the snippet; meaning and output remain unchanged.",
+      "expected_skill": null,
+      "rationale": "A literal bounded edit needs no compatibility or migration workflow."
+    },
+    {
+      "id": "evolve-06",
+      "focus": "evolve-safely",
+      "kind": "negative",
+      "prompt": "Organize the three engineers implementing a new search feature, assign independent files, manage dependencies, and integrate their results. There is no existing interface migration.",
+      "expected_skill": "mission-lead",
+      "rationale": "Explicit delegated coordination is orchestration rather than evolution of an existing contract."
+    }
+  ]
+}

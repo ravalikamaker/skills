@@ -1,0 +1,51 @@
+name: Bug or behavior feedback
+description: Report installation problems, activation misses, or incorrect task outcomes.
+body:
+  - type: markdown
+    attributes:
+      value: Use a minimal synthetic repro. Do not share secrets, private transcripts, customer data, internal context, or identifying local paths. Keep raw evaluation outputs outside this repository.
+  - type: dropdown
+    id: stage
+    attributes:
+      label: What did you observe?
+      options:
+        - Installation or discovery problem
+        - Missed activation
+        - Unwanted activation
+        - Incorrect runtime behavior
+        - Documentation or other bug
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Skill and source version
+      placeholder: Skill name and repository commit, or unknown
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Host and model
+      description: Host/version, provider/model/version if exposed, relevant settings, and installation method. Distinguish requested settings from observed execution; write unknown where needed. No private configuration dumps.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Synthetic reproduction
+      description: Minimal prompt, starting state, and steps another contributor can safely recreate.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and observed behavior
+      description: Include a short sanitized result, frequency/attempts, and evidence of discovery, activation, or runtime behavior where available. State which stages were not checked.
+    validations:
+      required: true
+  - type: textarea
+    id: comparison
+    attributes:
+      label: Comparison and limits
+      description: If evaluated, summarize the same task with and without the skill (and old/new versions for a revision). Include fixture IDs and what remains untested; a comparison is not required to report a bug.
