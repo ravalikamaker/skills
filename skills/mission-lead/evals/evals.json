@@ -95,6 +95,28 @@
         "Inspects current access and requests only the concrete missing hosted-account prerequisite without treating hosted verification as complete.",
         "Does not require new tickets, fixed timeboxes, context-size thresholds, or extra agents to classify the work."
       ]
+    },
+    {
+      "id": 10,
+      "prompt": "Plan dispatch only for an authorized local cancellation implementation. Policy says only pending reservations cancel. The current caller passes a display label while the API requires a reservation ID; a prior note assumes the caller already passes the ID. A separate copy edit is independent. No workers have started.",
+      "expected_output": "Reassesses invalidated wiring assumptions before dependent dispatch while retaining independent ready work.",
+      "assertions": [
+        "Distinguishes local authority from next-slice readiness.",
+        "Resolves the supplied interface mismatch instead of dispatching conflicting UI/API briefs.",
+        "Preserves pending-only policy and keeps independent copy work ready or scheduled in the dispatch plan without launching implementation workers.",
+        "Does not require a compulsory discovery pipeline or new approval for authorized local work."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Coordinate planning only: a cancellation policy leaves confirmed bookings undecided. Existing code allows them; product records contain no accepted rule. Current source and focused checks are accessible. Independent CSV quoting work has a complete agreed contract.",
+      "expected_output": "Investigates accessible evidence, asks only for the missing policy choice, and continues independently ready work.",
+      "assertions": [
+        "Does not infer accepted cancellation policy from current code.",
+        "Names the unmade policy choice and defers only dependent cancellation behavior.",
+        "Continues independent quoting planning without treating all uncertainty as a blocker.",
+        "Keeps planning read-only and does not dispatch unauthorized implementation."
+      ]
     }
   ]
 }

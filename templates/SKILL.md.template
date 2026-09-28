@@ -1,6 +1,6 @@
 ---
 name: my-skill
-description: "Replace with what this skill does and the specific requests that should trigger it."
+description: "Replace with the task this skill performs, the requests that trigger it, and a likely neighboring boundary when needed."
 license: MIT
 ---
 
@@ -9,17 +9,18 @@ license: MIT
 Replace every placeholder before publishing. Rename `my-skill` to match the
 containing directory. This template is not a published skill.
 
-## When to use
-
-Describe the task, relevant inputs, and the boundaries of this skill.
+State the purpose, relevant inputs, intended result, and essential constraints.
+Keep the skill independently usable and preserve the user's scope and authority.
 
 ## Workflow
 
-1. Describe the information to inspect before acting.
-2. Give concrete steps that produce the intended result.
-3. Explain how to check the result and report any remaining limitations.
+Explain the decisions or actions needed for this task, the evidence that informs
+them, and how to check the result. Preserve unknowns and open decisions instead of
+inventing rules. Honor a planning or review request without treating it as edit
+authority. Return the requested result and name only relevant limits.
 
-## Supporting files
+## Conditional detail
 
-Remove this section if unnecessary. Link any scripts, references, or assets using
-paths relative to this file, and explain when to read or use each file.
+Remove this section when no supporting files are needed. Link mode-specific detail
+inside this skill's folder and say when it changes the work. Do not duplicate it
+in the core, require other skill files, or target a word, line, or file-count quota.

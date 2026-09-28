@@ -1,5 +1,5 @@
 {
-  "description": "Metadata-only initial-routing fixture for fourteen independently installable skills. Each case has one expected skill or null for none; focus identifies the boundary being probed, not an expected activation. Each skill has three explicit or implicit positive cases and three near-miss negatives. A negative for the focus skill may route to a neighboring skill. Select only the single best initial skill, not every skill that might be useful later. Negatives include questions about named skills and bounded tasks outside their scope. These fixtures do not establish installation, host loading, observed skill activation, task execution, or live host behavior.",
+  "description": "Metadata-only initial-routing fixture. Each case has one expected skill or null for none; focus identifies the boundary being probed, not an expected activation. A negative for the focus skill may route to a neighboring skill. Select the single best initial skill, not every skill that might help later. These fixtures do not establish installation, host loading, observed activation, task execution, or live host behavior.",
   "cases": [
     {
       "id": "lead-01",
@@ -672,6 +672,286 @@
       "prompt": "Before implementation, turn our agreed cancellation rule into representative success and rejection examples. There are no existing docs or code to reconcile.",
       "expected_skill": "specify-behavior",
       "rationale": "New behavior examples need specification rather than reconciliation of existing claims."
+    },
+    {
+      "id": "test-01",
+      "focus": "test-change",
+      "kind": "explicit",
+      "prompt": "Use test-change to add and run regression tests for the accepted discount boundary. Tests-only edits are authorized; do not repair source.",
+      "expected_skill": "test-change",
+      "rationale": "Explicit targeted test authoring and execution with bounded authority."
+    },
+    {
+      "id": "test-02",
+      "focus": "test-change",
+      "kind": "implicit",
+      "prompt": "Add and execute the smallest meaningful coverage for the changed cancellation rule using our existing suite; keep expected outcomes grounded in the accepted rule.",
+      "expected_skill": "test-change",
+      "rationale": "Requests targeted coverage and execution, not overall acceptance."
+    },
+    {
+      "id": "test-03",
+      "focus": "test-change",
+      "kind": "implicit",
+      "prompt": "Existing format tests miss the sign-in identity wiring on CSV export. Write and run checks that would catch exporting another team’s data.",
+      "expected_skill": "test-change",
+      "rationale": "A specific coverage gap needs testing at the relevant connected boundary."
+    },
+    {
+      "id": "test-04",
+      "focus": "test-change",
+      "kind": "negative",
+      "prompt": "What kinds of tests does test-change support?",
+      "expected_skill": null,
+      "rationale": "A capability question does not invoke the workflow."
+    },
+    {
+      "id": "test-05",
+      "focus": "test-change",
+      "kind": "negative",
+      "prompt": "The feature is complete. Check all agreed outcomes and required gates and give an acceptance verdict.",
+      "expected_skill": "verify-work",
+      "rationale": "Overall acceptance belongs to verification."
+    },
+    {
+      "id": "test-06",
+      "focus": "test-change",
+      "kind": "negative",
+      "prompt": "Before implementation, turn the agreed cancellation rule into input and observable outcome examples; do not write or run tests.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Intended behavior examples precede test authoring."
+    },
+    {
+      "id": "simplify-01",
+      "focus": "simplify-code",
+      "kind": "explicit",
+      "prompt": "Use simplify-code to remove this needless forwarding wrapper locally, preserving shared validation, errors, and event ordering.",
+      "expected_skill": "simplify-code",
+      "rationale": "Explicit bounded internal simplification."
+    },
+    {
+      "id": "simplify-02",
+      "focus": "simplify-code",
+      "kind": "implicit",
+      "prompt": "Simplify the duplicated internal parsing rule in these two helpers without changing caller outputs or rejection behavior; run focused checks.",
+      "expected_skill": "simplify-code",
+      "rationale": "Authorized local simplification preserves observable behavior."
+    },
+    {
+      "id": "simplify-03",
+      "focus": "simplify-code",
+      "kind": "implicit",
+      "prompt": "Review whether removing this private adapter would eliminate complexity or merely duplicate its conversion rule across callers. Do not edit.",
+      "expected_skill": "simplify-code",
+      "rationale": "Read-only assessment of internal abstraction tradeoffs."
+    },
+    {
+      "id": "simplify-04",
+      "focus": "simplify-code",
+      "kind": "negative",
+      "prompt": "How does simplify-code differ from a formatter?",
+      "expected_skill": null,
+      "rationale": "A capability question does not invoke simplification."
+    },
+    {
+      "id": "simplify-05",
+      "focus": "simplify-code",
+      "kind": "negative",
+      "prompt": "Replace our public decimal-string response with integer units while older deployed clients remain active; plan migration and retirement.",
+      "expected_skill": "evolve-safely",
+      "rationale": "Consumer contract transition needs compatibility and migration guidance."
+    },
+    {
+      "id": "simplify-06",
+      "focus": "simplify-code",
+      "kind": "negative",
+      "prompt": "Rename the local variable row to item in this snippet only.",
+      "expected_skill": null,
+      "rationale": "A literal edit needs no simplification workflow."
+    },
+    {
+      "id": "evolve-07",
+      "focus": "evolve-safely",
+      "kind": "negative",
+      "prompt": "Simplify this private forwarding chain in one module, preserving outputs, errors, and side effects. No data or public consumer contract changes are needed.",
+      "expected_skill": "simplify-code",
+      "rationale": "Ordinary internal simplification does not need a migration workflow."
+    },
+    {
+      "id": "verify-07",
+      "focus": "verify-work",
+      "kind": "negative",
+      "prompt": "Write and run the missing regression tests for this authorized code change using the agreed rule; no overall acceptance review is requested.",
+      "expected_skill": "test-change",
+      "rationale": "Targeted test authoring and execution belongs to test-change."
+    },
+    {
+      "id": "write-01",
+      "focus": "write-clearly",
+      "kind": "explicit",
+      "prompt": "Use write-clearly to revise this engineering release update. Remove filler, clarify ambiguous wording, and retain the 7/8 local result, remote untested limit, links, and requested plain voice.",
+      "expected_skill": "write-clearly",
+      "rationale": "Explicit substantive prose revision with meaning preservation."
+    },
+    {
+      "id": "write-02",
+      "focus": "write-clearly",
+      "kind": "implicit",
+      "prompt": "Rewrite this product proposal so the team can understand the action and tradeoff. Remove canned praise and vague qualifications while retaining its uncertainty and scope.",
+      "expected_skill": "write-clearly",
+      "rationale": "Substantive writing clarity rather than choosing feature scope."
+    },
+    {
+      "id": "write-03",
+      "focus": "write-clearly",
+      "kind": "implicit",
+      "prompt": "Draft clear agent instructions from these agreed constraints, preserving permissions, domain terms, and exceptions without decorative filler.",
+      "expected_skill": "write-clearly",
+      "rationale": "Substantive instruction drafting uses precise language and authority preservation."
+    },
+    {
+      "id": "write-04",
+      "focus": "write-clearly",
+      "kind": "negative",
+      "prompt": "What does write-clearly do?",
+      "expected_skill": null,
+      "rationale": "A capability question does not request writing work."
+    },
+    {
+      "id": "write-05",
+      "focus": "write-clearly",
+      "kind": "negative",
+      "prompt": "Fix only the typo reciept to receipt in this filename.",
+      "expected_skill": null,
+      "rationale": "A literal correction needs no substantive writing workflow."
+    },
+    {
+      "id": "write-06",
+      "focus": "write-clearly",
+      "kind": "negative",
+      "prompt": "Audit the API guide against code and accepted release decisions; identify stale claims and code defects.",
+      "expected_skill": "reconcile-docs",
+      "rationale": "Factual contract reconciliation belongs to reconcile-docs."
+    },
+    {
+      "id": "write-07",
+      "focus": "write-clearly",
+      "kind": "negative",
+      "prompt": "The team wants a dashboard but nobody knows who needs it. Define the actual problem before drafting a proposal.",
+      "expected_skill": "frame-problem",
+      "rationale": "Intent discovery precedes a faithful writing task."
+    },
+    {
+      "id": "write-08",
+      "focus": "write-clearly",
+      "kind": "implicit",
+      "prompt": "Rewrite this product notice as a playful poem while preserving pending-only cancellation and confirmed rejection.",
+      "expected_skill": "write-clearly",
+      "rationale": "Substantive revision can preserve a requested creative voice."
+    },
+    {
+      "id": "plan-01",
+      "focus": "plan-implementation",
+      "kind": "explicit",
+      "prompt": "Use plan-implementation to inspect the current code and plan the settled CSV download: preserve agreed columns, choose reuse, define interfaces, sequence dependencies, and representative acceptance. Do not implement.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Explicit source-grounded technical planning for settled intent."
+    },
+    {
+      "id": "plan-02",
+      "focus": "plan-implementation",
+      "kind": "implicit",
+      "prompt": "The chosen feature and behavior are settled. Read the current callers and data flow, then outline the scoped changes and order needed for the next local slice; keep unknown wiring separate from product choices.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Technical approach and sequence need definition within settled scope."
+    },
+    {
+      "id": "plan-03",
+      "focus": "plan-implementation",
+      "kind": "implicit",
+      "prompt": "Before building the agreed pending-only cancellation action, inspect the existing UI/API wiring and propose the smallest technical approach with inputs, errors, dependencies, and an end-to-end check.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Approach planning uses settled behavior without reopening scope."
+    },
+    {
+      "id": "plan-04",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "What does plan-implementation produce?",
+      "expected_skill": null,
+      "rationale": "A skill capability question does not request planning."
+    },
+    {
+      "id": "plan-05",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "Rename this local variable from row to item in the supplied snippet only.",
+      "expected_skill": null,
+      "rationale": "A literal edit needs no implementation design phase."
+    },
+    {
+      "id": "plan-06",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "We know the staff problem but have not chosen the feature scope. Shape a candidate within a two-day investment with exclusions and a first useful journey.",
+      "expected_skill": "shape-feature",
+      "rationale": "Investment and feature scope remain open rather than settled."
+    },
+    {
+      "id": "plan-07",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "Organize native workers to implement the agreed download, assign ownership, manage dependencies, integrate changes, and verify it locally.",
+      "expected_skill": "mission-lead",
+      "rationale": "Authorized delegated execution belongs to mission-lead."
+    },
+    {
+      "id": "plan-08",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "Make the agreed cancellation rule concrete with input and observable success and rejection examples, without choosing internal structure.",
+      "expected_skill": "specify-behavior",
+      "rationale": "Behavior examples are distinct from a technical implementation approach."
+    },
+    {
+      "id": "plan-09",
+      "focus": "plan-implementation",
+      "kind": "negative",
+      "prompt": "Plan the amount-field migration across old clients, data conversion, retirement evidence, and recovery limits.",
+      "expected_skill": "evolve-safely",
+      "rationale": "Compatibility transition planning has a more specific skill."
+    },
+    {
+      "id": "lead-08",
+      "focus": "mission-lead",
+      "kind": "negative",
+      "prompt": "Plan the technical approach for a settled local export using current callers, data flow, reuse, dependencies, and acceptance. No implementation or worker coordination is requested.",
+      "expected_skill": "plan-implementation",
+      "rationale": "A technical plan needs no lead orchestration."
+    },
+    {
+      "id": "shape-07",
+      "focus": "shape-feature",
+      "kind": "negative",
+      "prompt": "Feature scope and investment are settled. Inspect the current implementation and plan the interfaces, sequence, and checks needed to build it; do not reopen feature choices.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Settled scope now needs implementation planning."
+    },
+    {
+      "id": "docs-07",
+      "focus": "reconcile-docs",
+      "kind": "negative",
+      "prompt": "Revise this substantive CLI guide for clear active wording and remove filler while preserving its supplied facts and links. Do not inspect implementation or reconcile claims.",
+      "expected_skill": "write-clearly",
+      "rationale": "Writing clarity is distinct from factual code-doc reconciliation."
+    },
+    {
+      "id": "behavior-07",
+      "focus": "specify-behavior",
+      "kind": "negative",
+      "prompt": "Behavior examples are agreed. Inspect current source and plan the technical data flow and dependent implementation changes.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Settled behavior now needs a technical approach."
     }
   ]
 }

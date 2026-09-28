@@ -1,6 +1,6 @@
 ---
 name: evolve-safely
-description: Plans or implements substantial changes to existing APIs, schemas, or code while preserving required behavior and consumer compatibility. Uses migration, retirement, and recovery checks appropriate to the change; avoids multi-phase ceremony for a simple atomic edit.
+description: Plans or implements consequential consumer-contract evolution, data migrations, and compatibility retirement. Preserves required behavior and data meaning with transition and recovery evidence; ordinary internal simplification belongs to simplify-code.
 license: MIT
 ---
 
@@ -8,8 +8,8 @@ license: MIT
 
 Change an existing system with evidence about who depends on it and what must
 remain true. Use this for a consequential API or schema evolution, migration,
-or behavior-preserving refactor. A trivial internal edit with no compatibility
-risk does not need a migration workflow.
+or compatibility retirement. Ordinary internal simplification without consumer or
+data risk needs no migration workflow; simplify-code can support it when installed.
 
 ## Discover the current contract
 
@@ -28,16 +28,9 @@ a schema migration that runs does not establish that old data keeps its meaning.
 
 ## Choose a transition proportional to the risk
 
-Inspect whether the existing capability can satisfy the requested change before
-adding a replacement abstraction or dependency. Justify additions by a concrete
-contract or compatibility gap rather than anticipated future needs. For a proposed
-abstraction, ask where its complexity would go if it were removed: does it
-concentrate a real rule or merely move indirection? Compare a concrete caller or
-change scenario, not just line counts or a preferred number of layers.
-
-When assessing an abstraction, deciding between an atomic change and coexistence,
-or assessing retirement and recovery evidence, read the relevant section of
-[transition examples](references/transition-examples.md).
+Use existing capability when it satisfies the transition; justify a replacement
+by a concrete consumer or data gap. Read [transition examples](references/transition-examples.md)
+when choosing atomic change versus coexistence or assessing retirement and recovery.
 
 Use an atomic change when the relevant consumers and data can move together
 safely. When old and new versions must coexist, consider expanding support,
@@ -59,7 +52,7 @@ path permanent by forgetting its owner or removal condition.
 Check the before/after behavior, relevant consumer contracts, and data invariants
 using the project's tools and representative existing data where permitted.
 For staged transitions, check coexistence and progress before advancing; for an
-atomic refactor, focused equivalence checks may be enough. Retain versioned
+atomic contract update, focused consumer and invariant checks may be enough. Retain versioned
 evidence and rerun affected checks after corrections.
 
 Choose recovery options before consequential mutation: supported rollback,

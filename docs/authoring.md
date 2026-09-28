@@ -3,23 +3,13 @@
 ## Layout
 
 ```text
-skills/                     # Skill source, each in its own directory
-  mission-lead/
-    SKILL.md                # Delegation-first mission orchestration
-    references/             # On-demand provider and harness guidance
-  verify-work/SKILL.md       # Outcome and artifact acceptance
-  session-handoff/SKILL.md   # Task continuity
-  capture-learning/SKILL.md  # Durable reusable lessons
-  frame-problem/SKILL.md     # Beneficiary, problem, constraints, and success
-  model-domain/SKILL.md      # Scoped vocabulary, rules, and state transitions
-  shape-feature/SKILL.md     # Bounded approach and first useful slice
-  specify-behavior/SKILL.md  # Concrete observable outcomes and boundary examples
-  design-experiment/SKILL.md # Bounded hypothesis-test planning
-  diagnose-failure/SKILL.md  # Evidence-based failure investigation
-  evolve-safely/SKILL.md     # Compatibility, migration, and retirement
-  reconcile-docs/SKILL.md    # Documentation and implementation drift in either direction
-  prevent-repeat/SKILL.md    # Recurring-failure prevention proposals
-  connect-insights/SKILL.md  # Multi-source synthesis with provenance
+skills/                     # Independently installable skill folders
+  <name>/
+    SKILL.md                # Trigger and core workflow
+    references/             # Optional detail loaded when needed
+    scripts/                # Optional executable helpers
+    assets/                 # Optional supporting resources
+    evals/evals.json         # Synthetic behavioral cases
 templates/
   SKILL.md.template         # Starting point; excluded from skill discovery
 scripts/
@@ -42,6 +32,12 @@ defaults, and installation does not establish delegation or runtime compatibilit
 
 ## Author a skill
 
+Create a new skill only when it has a distinct user trigger, a single outcome,
+and a standalone workflow. Reuse an existing skill for the same outcome; put
+optional detail in a linked reference instead of enlarging the core workflow or
+splitting it into more skills. Catalogs should name actual skills, while guides
+should avoid repeating aggregate inventories, counts, or current release status.
+
 1. Choose one repeatable task and a lowercase hyphenated name, such as `my-skill`.
    Identify concrete inputs, outputs, and a few user requests before writing instructions.
 2. Create `skills/my-skill/` and copy `templates/SKILL.md.template` into it as
@@ -52,15 +48,31 @@ defaults, and installation does not establish delegation or runtime compatibilit
    short and meaningful; explain decisions an agent would otherwise get wrong. Use
    linked supporting files only when their detail warrants loading on demand, and
    keep them inside that skill's directory. Add
-   `evals/evals.json` with `skill_name` and an `evals` array; start with 2–3
-   synthetic cases containing `id`, `prompt`, `expected_output`, and `assertions`.
-   Add more cases as needed; there is no upper limit.
+   `evals/evals.json` with `skill_name` and an `evals` array; include realistic boundary
+   cases containing `id`, `prompt`, `expected_output`, and `assertions`.
+   Add cases where they test a different decision or failure; no count quota applies.
 4. Run the validator, then install the skill in each intended host. Confirm that
    the host discovers it, then exercise its behavior.
    Check both appropriate activation and cases where it should stay inactive; use
    paired behavior evaluations before claiming an improvement.
 5. Review the content before committing and publishing. Add the actual skill to
-   this README once it exists.
+   the [README catalog](../README.md#try-a-skill) once it exists.
+
+Keep the trigger, purpose, and essential constraints in `SKILL.md`. Move detail
+needed only for a particular mode into a linked reference and say when to read it.
+Each installed skill must work from its own folder; use optional companion names,
+not cross-skill file dependencies. Do not add references just to shorten the core
+or impose a fixed core-to-reference ratio.
+
+Use the portable [voice guidance](../skills/write-clearly/references/voice.md) when
+writing maintained instructions. Preserve evidence, conditions, permissions, and
+domain terms while removing filler. Descriptions should identify the actual task
+and its likely routing boundary; do not promise invocation rates or task quality
+without observed evidence. The reference supports maintainers here; other skills
+do not need it installed or loaded to work. The filename `voice.md` has no automatic
+loading semantics: an entrypoint link and a useful load condition make a reference
+discoverable. Evaluate appropriate selection and false positives; maximizing raw
+invocation frequency is not the goal.
 
 These practices follow the official [OpenAI skill guidance](https://learn.chatgpt.com/guides/best-practices#turn-repeatable-work-into-skills)
 and [Anthropic authoring guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices).
@@ -84,8 +96,7 @@ validated.
 ### Evaluate skills
 
 `evals/trigger-cases.json` contains explicit, implicit, and negative selection
-cases: three positive and three near-miss negatives for each of fourteen skills
-(84 cases total).
+cases for each skill, including nearby requests that should stay inactive.
 Choose the single best initial skill, or none; later skill use is outside this fixture.
 Recheck existing negatives whenever the catalog grows to avoid cross-skill label
 collisions. Compare metadata-only skill catalogs with the expected labels withheld,
@@ -112,8 +123,8 @@ See [Contributing](../CONTRIBUTING.md#evaluate-a-change) for the evaluation work
 
 ## Releases
 
-The package version is `0.4.0`; a version bump is not publication evidence. Before publishing a change, bump the
-version consistently in `plugin.json`, `.claude-plugin/plugin.json`, and every
+A version bump is not publication evidence. Before publishing a change, bump
+the version consistently in `plugin.json`, `.claude-plugin/plugin.json`, and every
 marketplace catalog entry that carries it. Both catalogs point at this repository
 root and share the same `skills/` tree. Never alter an already published version
 or move a release tag; publish a new version instead.

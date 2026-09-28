@@ -26,7 +26,7 @@ labels when their meanings differ.
 ## Establish rules through examples
 
 Describe the relevant concepts, relationships, allowed states, and transitions.
-For each consequential rule, identify its source, who it applies to, and a
+For each rule that affects the current decision, identify its source, who it applies to, and a
 concrete allowed or rejected example. Name invariants that must remain true
 across changes, including ownership or timing where relevant.
 
@@ -48,10 +48,10 @@ governance, prescribe a new architecture, or treat a diagram as enforcement.
 ## Return a useful bounded model
 
 Use the smallest form that makes the decision clear: a short vocabulary table,
-rule examples, or a state diagram when useful. Include the source and confidence
-of important rules, mismatches with current enforcement, and the unresolved
-hotspot most likely to change the next action. A hotspot is an uncertainty to
-resolve, not a mandate for a larger redesign.
+rule examples, or a state diagram when useful. Include the source and evidence limits
+of rules affecting this work, mismatches with current enforcement, and the unknown
+or open decision most likely to change the next action. Name whether information
+is missing or a choice is unmade; neither requires a larger redesign.
 
 Modeling does not authorize implementation or stakeholder outreach. Save an
 artifact only when writing is authorized. A clear model is a proposal or account

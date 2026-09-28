@@ -1,7 +1,7 @@
 {
   "name": "ravalikamaker-skills",
-  "version": "0.4.0",
-  "description": "Portable workflows for problem framing, domain modeling, feature shaping, behavior specification, experiments, diagnosis, safe evolution, documentation reconciliation, coordination, verification, handoff, learning, prevention, and synthesis.",
+  "version": "0.5.0",
+  "description": "Portable skills for product and engineering work, from clarifying intent to implementation, verification, and learning.",
   "author": {
     "name": "ravalikamaker"
   },

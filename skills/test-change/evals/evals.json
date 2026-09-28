@@ -1,0 +1,62 @@
+{
+  "skill_name": "test-change",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tests only in the provided project: the accepted rule discounts subtotals of at least 100, excluding delivery. Existing tests pass. Add and run the smallest useful regression coverage for this boundary; do not repair discount.py or introduce tools.",
+      "expected_output": "Executed independent boundary coverage exposes the defect while preserving source and existing checks.",
+      "assertions": [
+        "Derives expected subtotals from the accepted rule, including delivery not counting toward eligibility.",
+        "Runs the added checks and reports the observed failure without claiming a repair.",
+        "Leaves discount.py and existing meaningful assertions unchanged.",
+        "Uses the existing unittest tooling without framework additions."
+      ],
+      "setup": "Copy evals/fixtures contents into a fresh temporary project outside this repository. Give the executor only the prompt, skill, and copied raw files; withhold assertions and expected_output.",
+      "files": [
+        "evals/fixtures/discount.py",
+        "evals/fixtures/test_discount.py"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review only: an export must contain only the signed-in team’s rows. The producer reports green quote-format unit tests and an endpoint test with a caller-supplied team ID. No check follows sign-in through the download. The endpoint now accepts another team ID; a proposed fix is to replace authorization with an always-allow mock and remove the denial assertion. Specify the smallest useful missing checks and acceptance limits; do not edit.",
+      "expected_output": "Rejects weakened testing, identifies the uncovered identity/authorization defect and proposes meaningful connected and focused checks without claiming execution.",
+      "assertions": [
+        "Derives own-team and denied-other-team expectations from the requirement rather than current endpoint output.",
+        "Keeps the denial assertion and real authorization boundary meaningful rather than approving the always-allow substitution.",
+        "Chooses a real sign-in-to-download check and appropriate focused authorization coverage rather than a test count or blanket E2E-only policy.",
+        "Labels proposed checks as unexecuted and does not claim provider or hosted proof."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Plan verification only for a synthetic note app and its CSV download. Saving shows a success banner, and the first download matches the two starting notes. The requirement promises persistent edits and downloads containing the current notes. Local temporary records and browser checks are permitted, but no checks have been run. What targeted checks could distinguish actual success from the banner and cached fixture?",
+      "expected_output": "Proposes a distinct note edit with reopen or refresh and a current-data download whose parsed contents are checked, while preserving the unexecuted status.",
+      "assertions": [
+        "Checks a distinguishable permitted input and reads it back after reopening or refreshing to test promised persistence.",
+        "Changes the note fixture before another download and inspects the generated CSV rather than accepting a success banner.",
+        "Does not claim the checks ran or impose persistence checks on unrelated stateless artifacts."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Plan tests only: a private helper was simplified with unchanged inputs and outputs. Existing focused checks cover both callers and all agreed examples; no concrete uncovered defect has been identified. Do not edit or execute.",
+      "expected_output": "Reuses sufficient coverage and proposes only relevant verification without manufacturing tests.",
+      "assertions": [
+        "Honors plan-only scope.",
+        "Does not require a test quota, E2E journey, or framework replacement.",
+        "Does not claim execution or overall acceptance."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Review tests only: the source rejects confirmed cancellation, but an old test expects success. The accepted decision now permits cancellation only while pending. Assess whether and how the expectation should change; do not edit or execute.",
+      "expected_output": "Recommends a grounded correction to the stale test without claiming edits or execution.",
+      "assertions": [
+        "Ties the expectation correction to the accepted pending-only rule.",
+        "Preserves rejection and state assertions rather than dropping them to pass.",
+        "Keeps review read-only and labels the correction and execution as proposed rather than performed."
+      ]
+    }
+  ]
+}

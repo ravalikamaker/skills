@@ -49,33 +49,6 @@
         "Proposes relevant invariant and transition checks rather than a generic assurance.",
         "Does not apply the migration or fabricate a tested recovery."
       ]
-    },
-    {
-      "id": 5,
-      "prompt": "Use evolve-safely for this authorized local change in the provided synthetic project: rename private _double to _twice in helpers.py and update its two callers. Public API, data, and behavior must remain unchanged; existing focused tests cover both callers. Implement the rename without external changes.",
-      "expected_output": "A proportional atomic change and focused verification without migration ceremony.",
-      "assertions": [
-        "Preserves public behavior and both private callers.",
-        "Does not require expand-migrate-contract, a new compatibility layer, or consumer governance.",
-        "Completes authorized local work and runs appropriate existing checks.",
-        "Does not claim live deployment or data migration."
-      ],
-      "setup": "Copy evals/fixtures/rename/ contents into a fresh temporary project outside this repository. Use that directory as the workspace; the scoped private-helper rename is authorized. Do not expose assertions or expected_output to the executor.",
-      "files": [
-        "evals/fixtures/rename/helpers.py",
-        "evals/fixtures/rename/test_helpers.py"
-      ]
-    },
-    {
-      "id": 6,
-      "prompt": "Review only two proposed synthetic refactors. Adapter A centralizes minor-unit-to-decimal conversion and rounding used by three legacy callers; removing it makes those callers repeat the rules. Wrapper B only forwards one private helper for its sole caller and changes no inputs, outputs, errors, or ownership. The team wants fewer layers and cites line counts as proof. Assess the proposals without editing.",
-      "expected_output": "Explains where complexity would move for each removal and assesses concrete contracts rather than using line count or a layer mandate.",
-      "assertions": [
-        "Recognizes that removing A distributes the existing conversion rule across callers rather than eliminating its complexity.",
-        "Considers direct invocation for B after checking its caller contract rather than preserving it for hypothetical needs.",
-        "Uses the concrete examples and behavior evidence rather than declaring fewer layers or lines inherently better.",
-        "Keeps the review read-only."
-      ]
     }
   ]
 }

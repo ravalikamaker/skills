@@ -18,7 +18,8 @@ within its authority instead of adding a discovery phase.
 
 Read the supplied context and preserve explicit choices, constraints, and
 non-goals. If the user has already chosen a solution, clarify its purpose without
-reopening that choice unless evidence reveals a consequential mismatch.
+reopening that choice unless evidence shows a conflict with the stated outcome
+or constraints.
 
 ## Separate the need from the proposed approach
 
@@ -32,9 +33,9 @@ missing rather than becoming a discovery mandate.
 State the intended benefit in terms of a changed experience, decision, or result.
 Keep the proposed approach separate so alternatives can be considered when the
 user wants them. Identify the core value that would remain useful if the proposed
-interface disappeared. When the approach is still open, compare a few materially
-different ways to deliver that value, including a simpler change to the current
-process when credible. Do not substitute the agent's preferred goal for the user's.
+interface disappeared. When the approach is still open, compare a few approaches
+that differ in cost, constraints, or expected benefit, including a simpler change
+to the current process when credible. Do not substitute the agent's preferred goal for the user's.
 
 Capture constraints that affect the decision: scope, time, resources, access,
 privacy, and permitted actions when relevant. Name competing goals and tradeoffs
@@ -42,8 +43,8 @@ without silently deciding which stakeholder's interest wins.
 
 Expose assumptions that could change the choice. Mark unknown beneficiaries,
 baselines, or causes as unknown rather than filling them with invented evidence.
-Ask only questions whose answers materially change the frame or next decision;
-continue useful work that does not depend on those answers.
+Ask only questions whose answers change the beneficiary, intended benefit, scope,
+or next decision; continue useful work that does not depend on those answers.
 
 ## Define useful success
 

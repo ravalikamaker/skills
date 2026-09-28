@@ -47,8 +47,9 @@ a detailed task inventory or architecture chosen for appearance alone.
 
 Identify risks that could consume the investment or break the promised outcome:
 unknown dependencies, difficult integration, conflicting rules, or missing
-access. Separate known obstacles from assumptions. Propose a bounded check for
-a consequential unknown; an experiment is useful only when it changes a decision.
+access. Separate known prerequisites from unknown information and assumptions
+used to proceed. Propose a bounded check for an unknown that could change feasibility
+or scope; an experiment is useful only when it changes a decision.
 
 State exclusions and deliberate tradeoffs so the scope cannot grow silently.
 Respect explicit user choices. Exclusions cannot remove a requirement needed

@@ -1,0 +1,68 @@
+{
+  "skill_name": "simplify-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Simplify the provided labels.py locally: remove needless forwarding indirection while keeping the shared label rule, returned values, errors, and event behavior unchanged. Keep the scope to this module and its focused tests; no public-contract changes.",
+      "expected_output": "Removes the forwarding wrapper without duplicating the shared rule, preserving rejection and side effects with executed checks.",
+      "assertions": [
+        "Removes needless forwarding rather than introducing another abstraction.",
+        "Keeps one shared normalization and validation rule for both callers.",
+        "Preserves error type/message and no-event-on-rejection ordering.",
+        "Runs the existing focused checks and reports bounded evidence."
+      ],
+      "setup": "Copy evals/fixtures/labels.py and test_labels.py into a fresh temporary project outside this repository. Give the executor only the prompt, skill, and raw files; withhold assertions and expected_output.",
+      "files": [
+        "evals/fixtures/labels.py",
+        "evals/fixtures/test_labels.py"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review only two proposed synthetic refactors. Adapter A centralizes minor-unit-to-decimal conversion and rounding used by three legacy callers; removing it makes those callers repeat the rules. Wrapper B only forwards one private helper for its sole caller and changes no inputs, outputs, errors, or ownership. The team wants fewer layers and cites line counts as proof. Assess the proposals without editing.",
+      "expected_output": "Explains where complexity would move for each removal and assesses concrete contracts rather than using line count or a layer mandate.",
+      "assertions": [
+        "Recognizes that removing A distributes the existing conversion rule across callers rather than eliminating its complexity.",
+        "Considers direct invocation for B after checking its caller contract rather than preserving it for hypothetical needs.",
+        "Uses the concrete examples and behavior evidence rather than declaring fewer layers or lines inherently better.",
+        "Keeps the review read-only."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use simplify-code for this authorized local change in the provided synthetic project: rename private _double to _twice in helpers.py and update its two callers. Public API, data, and behavior must remain unchanged; existing focused tests cover both callers. Implement the rename without external changes.",
+      "expected_output": "A proportional atomic change and focused verification without migration ceremony.",
+      "assertions": [
+        "Preserves public behavior and both private callers.",
+        "Does not require expand-migrate-contract, a new compatibility layer, or consumer governance.",
+        "Completes authorized local work and runs appropriate existing checks.",
+        "Does not claim live deployment or data migration."
+      ],
+      "setup": "Copy evals/fixtures/rename/ contents into a fresh temporary project outside this repository. Use that directory as the workspace; the scoped private-helper rename is authorized. Do not expose assertions or expected_output to the executor.",
+      "files": [
+        "evals/fixtures/rename/helpers.py",
+        "evals/fixtures/rename/test_helpers.py"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Simplify only the internal implementation of an amount formatter. A proposal removes the public decimal-string response because integers would be shorter; old clients remain active and no response or data changes are authorized. Assess before editing.",
+      "expected_output": "Separates in-scope internal simplification from unauthorized consumer-contract evolution.",
+      "assertions": [
+        "Does not change the public response or migrate data.",
+        "Names old-client compatibility and separate transition authority.",
+        "Does not claim fewer lines establishes equivalent behavior."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Review only a local cleanup: deleting an error branch makes the function shorter, but invalid input would now append an event before raising a different error. Required errors and no-side-effect rejection are unchanged.",
+      "expected_output": "Rejects behavior drift as simplification and stays read-only.",
+      "assertions": [
+        "Identifies the changed error and side-effect ordering.",
+        "Does not accept shorter code as sufficient proof.",
+        "Makes no edits."
+      ]
+    }
+  ]
+}

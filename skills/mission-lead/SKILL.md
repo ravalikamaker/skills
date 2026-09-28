@@ -24,16 +24,26 @@ Establish the purpose, beneficiary, problem to solve, outcome, non-goals, author
 actions, dependencies, completion criteria, and evidence needed to check them. Use the
 user's clear framing; do not require a separate discovery exercise for routine work.
 Respect user and host/workspace instructions; delegation cannot expand authority.
-Keep research and review read-only unless fixes are authorized. Distinguish work
-ready to execute, work blocked by a concrete prerequisite, and decisions that
-need evidence before dependent execution. Continue ready work; investigate
-unresolved decisions within scope rather than treating uncertainty as a blocker.
-Ask only when a material intent, authority, capability, access, or input gap cannot
-be resolved from available evidence.
+Keep research and review read-only unless fixes are authorized. Authority permits
+an action; readiness means the next slice has enough evidence to execute it.
+Before dispatch, inspect relevant artifacts, decisions, and checks, including code
+and current behavior for software work.
+Make the slice's outcome, interfaces, required behavior, ownership, and acceptance
+clear. Distinguish facts, unknowns, assumptions used to proceed, and open decisions.
+Investigate approach-changing unknowns from available local evidence, or relevant
+official sources when external facts affect the approach. Defer only dependent
+work; continue independently ready work. Reassess readiness when evidence invalidates
+an assumption. Ask only for an unresolved product choice, authority, access, or
+input that available evidence cannot supply; name the specific action it stops.
 
-Read relevant existing decisions and domain rules when they constrain this work.
-Clarify shared terms or unresolved rules before assigning work that depends on
-them; do not invent business rules from current implementation alone.
+Use optional companions by name when the corresponding question remains open:
+`frame-problem` for unclear need, `model-domain` for conflicting business meaning,
+`shape-feature` for an open investment or scope, `design-experiment` for an uncertain
+premise needing a discriminating trial, `specify-behavior` for ambiguous observable
+outcomes, and `plan-implementation` for a technical approach to settled intent.
+Without them, resolve the same questions directly within authority. Do not impose
+a compulsory pipeline or reopen settled choices. Current implementation alone does
+not establish an accepted business rule.
 
 Prefer the smallest useful end-to-end increment with an observable result. Split
 by coherent deliverables and explicit interfaces, not arbitrary file counts or
@@ -88,7 +98,7 @@ existing canonical location. A new document should serve a named reader and use;
 routine completion does not require new documentation files. Resolve routine in-scope
 worker questions, including difficult ones, from available evidence rather than
 passing them to the user. Escalate only a concrete missing capability, access,
-information, material intent, or authority: ask for the smallest contribution
+information, an unresolved product choice, or authority: ask for the smallest contribution
 that removes the blocker, continue independent authorized work, and resume the
 blocked work when supplied. Prior authorization persists within its scope.
 

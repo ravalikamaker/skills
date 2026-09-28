@@ -2,9 +2,9 @@
 
 Choose the bundle **or** standalone copies in each host. The bundle is named
 `ravalikamaker-skills`; the repository marketplace is `ravalikamaker`. All routes
-use the same fourteen directories under `skills/`. These instructions describe
-host-supported mechanisms; see the [README status](../README.md#try-a-skill)
-for the limits of native checks.
+use the same source under `skills/`. These instructions describe host-supported
+mechanisms; check discovery and behavior in your intended host after installing.
+Structural validation alone does not establish native compatibility.
 Commands below are actions for you to run; installation uses your host's normal
 scope and permission controls.
 
@@ -66,7 +66,7 @@ its `plugin.json` and entire `skills/` directory into a new directory at
 `~/.cursor/plugins/local/ravalikamaker-skills/`. Keep `plugin.json` directly
 inside that directory.
 
-Run **Developer: Reload Window**, open **Customize**, and check that all fourteen
+Run **Developer: Reload Window**, open **Customize**, and check that the bundled
 skills appear. Select the skill there or type `/verify-work` with your task.
 
 To update, replace the local bundle with a fresh reviewed copy and reload. To
@@ -125,12 +125,9 @@ From the configured target workspace, install one folder from a separate clone:
 openclaw skills install /absolute/path/to/clone/skills/verify-work
 ```
 
-Repeat for `frame-problem`, `design-experiment`, `mission-lead`,
-`model-domain`, `shape-feature`, `specify-behavior`, `session-handoff`,
-`capture-learning`, `prevent-repeat`, `connect-insights`, `diagnose-failure`,
-`evolve-safely`, and `reconcile-docs`
-to install all fourteen. OpenClaw uses individual skills here, not this repository's plugin
-manifest. A [manual folder copy](#standalone-skills) is also supported.
+Repeat for other folders under `skills/` to install more skills. OpenClaw uses
+individual skills here, not this repository's plugin manifest. A
+[manual folder copy](#standalone-skills) is also supported.
 
 Check `openclaw skills list` and `openclaw skills check`, start a new session,
 and ask “Use verify-work to check this change against my requirements.”
@@ -167,7 +164,7 @@ mkdir -p /path/to/project/.agents/skills
 cp -R skills/verify-work /path/to/project/.agents/skills/
 ```
 
-Repeat for the other names, or copy all fourteen folders for the full set. Start a new
+Repeat for the other names, or copy the full `skills/` contents. Start a new
 session and use a [README example](../README.md#try-a-skill). If missing, check
 that the destination is `<skills directory>/<name>/SKILL.md`, not a nested copy
 of the repository, and that the host opened the intended project.

@@ -43,50 +43,29 @@ QA to the user; request a narrowly defined contribution only when a concrete
 capability, access, input, or authority gap prevents required proof, and continue
 independent checks while waiting. Resume the blocked check when the gap is filled.
 
-Choose the smallest decisive checks for the consequences and uncertainty involved.
-Inspect existing coverage before adding tests: name a plausible defect it would
-miss and choose a check that would detect it. Choose real journey checks for
-connected behavior and focused integration or unit checks where they expose the
-relevant defect;
-there is no test-count quota or universal E2E-only requirement. Derive expected
-results from requirements, accepted examples, or an independent reference, not
-from the implementation being checked:
+Choose the smallest decisive checks for the completion criteria and consequences.
+Derive expected results from accepted requirements, examples, or independent
+source evidence, not the implementation or producer's assertion. Run applicable
+required gates; local success does not replace a required CI gate. Own accessible
+execution and result inspection within authority, and name specific access or
+trigger-authority gaps rather than assigning all QA to the user.
 
-- Exercise representative behavior and relevant failure cases for a changed system.
-  Follow the relevant user journey to its promised result, including recovery or
-  rejection when consequential; isolated screens or endpoints may be insufficient.
-  Check waiting, empty, denied, error, cancellation, or recovery states only when
-  relevant to the promised journey. A success-only demo may conceal an unusable
-  boundary; a universal state checklist can also add irrelevant work.
-- For a behavior-preserving refactor, compare observable behavior with the prior
-  version for the affected inputs and interfaces. Flag intentional changes that
-  need an explicit requirement rather than accepting them as cleanup.
-- Inspect calculations, source support, internal consistency, and usability for
-  documents, analyses, or other deliverables.
-- Check affected docs, examples, and comments for drift from accepted intent and
-  the changed behavior, including generated sources when relevant. Check whether
-  added documentation was requested or useful; routine completion alone does not
-  justify new files. Preserve valid promises when code is defective. Keep comments
-  that explain non-obvious invariants, rationale, or public contracts; flag redundant
-  line-by-line narration within scope. Read the [documentation example](references/testing-examples.md#documentation-can-expose-a-code-defect)
-  when checking a docs/code mismatch or unnecessary additions.
-- Check interactions between combined contributions, not only isolated parts.
-- Run applicable required checks; identify what they establish and what they omit.
-  Local success does not replace an independently required CI gate. When a check
-  can run only in CI, own triggering, result inspection, and scoped repairs within
-  existing authority rather than handing it to the user. Without needed access or trigger
-  authority, report that specific gap and keep the gate unresolved.
+Check representative behavior, relevant rejection or recovery, and consequential
+side effects. For a refactor, compare affected observable behavior with the prior
+version and agreed rules. For documents or analyses, check calculations, source
+support, consistency, and usability. Check interactions among combined changes.
+Inspect affected docs, examples, and comments against accepted intent: preserve
+valid promises and useful invariant comments, and flag stale or unnecessary
+additions. Read [acceptance examples](references/acceptance-examples.md) when a
+docs/code mismatch or independent acceptance pass matters.
 
-Preserve test integrity: do not weaken assertions, skip failing checks, or mock a
-real boundary merely to get a pass. Correct a stale test only against an accepted
-requirement, explaining why its old expectation is no longer valid. For bug fixes,
-reproduce failure before the correction and success afterward where practical;
-if the earlier failure was not observed, say so rather than inventing proof.
-Target checks at plausible misleading success: vary fixture data, refresh or reopen
-the result, inspect generated output, and check persistence when it is promised.
-Use only the checks relevant to the claim. Read the relevant section of
-[testing examples](references/testing-examples.md) when selecting coverage,
-checking apparent success, or interpreting substituted boundaries.
+Preserve test integrity: do not weaken assertions, skip failures, or substitute an
+always-successful boundary to accept the artifact. Distinguish observed execution
+from proposed checks and simulated boundaries from real ones. Inspect the actual
+result, including persistence or generated contents when promised; a success banner
+is not sufficient evidence. If missing coverage requires test authoring, test-change
+can help when installed. This skill remains sufficient to choose and execute
+acceptance checks without that companion.
 
 For an HTTP contract, application security, accessibility, or secure-development
 process review, consult [standards guidance](references/standards.md) only for the
@@ -96,7 +75,7 @@ Use evidence independent of the producer's success assertion. This can be direct
 inspection or a fresh execution; it does not automatically require another agent.
 For consequential integrated work, an independent acceptance pass may benefit
 from the requirements and runnable artifact before the implementation details;
-read [testing examples](references/testing-examples.md#independent-acceptance)
+read [acceptance examples](references/acceptance-examples.md#independent-acceptance)
 when that separation would test a plausible shared assumption. This is optional,
 not a default extra reviewer or a restriction on debugging access.
 If independent review is required, use an available reviewer with a bounded brief

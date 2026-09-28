@@ -1,15 +1,12 @@
 # Skills
 
-Fourteen portable [Agent Skills](https://agentskills.io/specification) by
-[ravalikamaker](https://github.com/ravalikamaker) for framing problems, planning
-experiments, modeling domains, shaping features, specifying behavior, coordinating
-work, diagnosing failures, evolving existing systems, reconciling documentation,
-checking results, resuming sessions, saving lessons,
-preventing repeated failures, and connecting evidence across sources.
+Portable [Agent Skills](https://agentskills.io/specification) by
+[ravalikamaker](https://github.com/ravalikamaker) for product and engineering
+work, from clarifying problems through delivery and learning.
 
 ## Start here
 
-Choose your harness, then install individual skills or the fourteen-skill bundle.
+Choose your harness, then install individual skills or the bundle.
 Choose **one installation method** per host to avoid duplicate skills.
 
 | Your harness | Individual skills | Bundle |
@@ -18,7 +15,7 @@ Choose **one installation method** per host to avoid duplicate skills.
 | [Claude Code](docs/install.md#claude-code) | Skills CLI or folder copy | Repository plugin marketplace |
 | [Cursor](docs/install.md#cursor) | Skills CLI or folder copy | Local plugin; not publicly listed |
 | [GitHub Copilot CLI / VS Code](docs/install.md#github-copilot) | Skills CLI or folder copy | Direct repository plugin |
-| [OpenClaw](docs/install.md#openclaw) | Native skill install or folder copy | Install all fourteen skill folders |
+| [OpenClaw](docs/install.md#openclaw) | Native skill install or folder copy | Install the skill folders |
 
 For an individual skill, run this in your **target project**, with Node.js and
 pnpm available. Change `codex` to `claude-code`, `cursor`, `github-copilot`, or
@@ -28,7 +25,7 @@ pnpm available. Change `codex` to `claude-code`, `cursor`, `github-copilot`, or
 pnpm dlx skills add ravalikamaker/skills --skill mission-lead --agent codex --copy
 ```
 
-Replace `mission-lead` with any name below, or `'*'` to copy all fourteen. You can
+Replace `mission-lead` with any name below, or `'*'` to copy the full set. You can
 also replace `ravalikamaker/skills` with an absolute path to this clone.
 The [Skills CLI](https://github.com/vercel-labs/skills) is optional;
 [manual installation](docs/install.md#standalone-skills) needs no Node.js or pnpm.
@@ -46,10 +43,14 @@ skill picker, or explicitly ask for it by name:
 | [specify-behavior](skills/specify-behavior/SKILL.md) | Make expected outcomes concrete before implementation. | “Use specify-behavior for cancellation before payment; show success, rejection, and unresolved boundary examples.” |
 | [design-experiment](skills/design-experiment/SKILL.md) | Plan a bounded test before investing in a proposed change. | “Use design-experiment to plan a small test of whether a shorter signup helps new users; include the hypothesis, limits, and decision rule.” |
 | [diagnose-failure](skills/diagnose-failure/SKILL.md) | Investigate a failure with competing explanations and decisive checks. | “Use diagnose-failure to investigate these intermittent import failures; separate observations, hypotheses, negative attempts, and the next useful check.” |
+| [test-change](skills/test-change/SKILL.md) | Write and execute focused tests for an authorized change. | “Use test-change to add and run regression coverage for this discount boundary; keep source unchanged.” |
+| [simplify-code](skills/simplify-code/SKILL.md) | Remove internal complexity while preserving required behavior. | “Use simplify-code to remove this forwarding layer; preserve shared validation, errors, and side effects.” |
 | [evolve-safely](skills/evolve-safely/SKILL.md) | Change existing contracts while protecting consumers and data. | “Use evolve-safely to plan the amount-field migration while old clients remain active; include compatibility, retirement criteria, and recovery limits.” |
+| [plan-implementation](skills/plan-implementation/SKILL.md) | Plan a technical approach and execution sequence for settled intent. | “Use plan-implementation to inspect the current download flow and plan the next local slice, interfaces, dependencies, and acceptance; do not build yet.” |
 | [mission-lead](skills/mission-lead/SKILL.md) | Coordinate substantial work and check completion. | “Use mission-lead to implement CSV export in this project, delegate independent work where supported, and verify the result.” |
 | [reconcile-docs](skills/reconcile-docs/SKILL.md) | Reconcile docs and implementation against accepted intent in either direction. | “Use reconcile-docs to audit this CLI guide against its current implementation and accepted contract; report stale claims and code defects without edits.” |
 | [verify-work](skills/verify-work/SKILL.md) | Check outcomes against independent evidence. | “Use verify-work to review this report against the attached source data and tell me what is still unproven.” |
+| [write-clearly](skills/write-clearly/SKILL.md) | Remove filler and clarify substantive prose while preserving meaning and voice. | “Use write-clearly to revise this engineering update; retain all evidence limits, links, and permissions.” |
 | [session-handoff](skills/session-handoff/SKILL.md) | Preserve unfinished work for another session. | “Use session-handoff to save a checkpoint in docs/handoff.md with decisions, checks, and the next action.” |
 | [capture-learning](skills/capture-learning/SKILL.md) | Save a reusable lesson with its evidence. | “Use capture-learning to record what this retry failure taught us in docs/learning/retries.md.” |
 | [prevent-repeat](skills/prevent-repeat/SKILL.md) | Propose prevention for a recurring failure. | “Use prevent-repeat on these repeated missed handoffs; identify a prevention point, proposed owner, and benefit and harm measures.” |
@@ -61,22 +62,10 @@ installed, with bounded fallbacks when they are absent. Delegation and model
 selection depend on the tools your host actually exposes. Writing a handoff or
 lesson requires an authorized destination; installation grants no extra authority.
 
-**Package status:** Version `0.4.0` packages fourteen portable skill folders with
-Agent Plugins 1.0 and Claude Code compatibility manifests, worked examples, and
-conditional guidance. Its structural checks are reported separately from native
-installation, loading, and runtime behavior, which remain untested for `0.4.0`.
-
-Historical `0.3.0` isolated local-source marketplace registration and installation
-passed on Codex 0.157.1 and Claude Code 2.1.283. Both installed bundles contained
-all thirteen skill directories and all 43 skill files hash-identical to that
-source; Claude's details inventory listed all thirteen skills. Claude's strict
-manifest and catalog validation also passed. Upgrade/removal checks for `0.3.0`
-remain untested.
-
-Historical OpenClaw 2026.9.5 checks installed and listed the original four skills
-from `0.1.0`; `0.3.0` remains untested on OpenClaw, Cursor, and Copilot.
-Installation checks do not establish native model-driven activation, task quality
-or performance, or a public directory listing.
+The bundle includes portable Agent Skills and host compatibility manifests.
+Packaging and structural validation do not establish installation, discovery,
+model-driven activation, or task quality on every host. Check the skills in your
+intended host; a public marketplace or directory listing is a separate step.
 
 ## Help and contribute
 

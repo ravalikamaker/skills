@@ -81,3 +81,21 @@ Keep these states in existing task context, updating them as evidence arrives.
 They require neither new tickets nor a fixed timebox or context-size threshold.
 If the missing item were a material product rule with no accepted source, ask that
 narrow question and continue the independent exporter work.
+
+## Permission does not settle the approach
+
+Request: implement a local cancellation action. The accepted policy permits only
+pending reservations, and the lead has source access. A previous note assumes the
+UI passes a reservation ID, but the current handler passes a display label.
+
+Inspect the actual caller and API before dispatching dependent work. Preserve the
+pending-only rule, establish the shared ID and rejection contract, and assign the
+UI/API sequence with file ownership. The assumption is invalidated by source;
+reassess the brief rather than sending two workers conflicting interfaces. No new
+product decision or approval is needed to use the accepted policy and inspect code.
+An independent copy change can proceed if its meaning does not depend on the ID.
+
+If policy instead leaves confirmed cancellation undecided, name that open decision
+and ask only about it before assigning the dependent behavior. An agent may inspect
+existing behavior but cannot silently adopt it as policy. Local edit authority
+and source access do not make an unresolved business rule ready to implement.

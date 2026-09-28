@@ -1,0 +1,59 @@
+{
+  "skill_name": "write-clearly",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Revise release-draft.md into a concise plain paragraph for its stated reader. Remove filler, preserve all evidence and authority limits, and keep the link. Return the revised text without editing other files.",
+      "expected_output": "A faithful plain paragraph with scoped evidence and no inflated release claim.",
+      "assertions": [
+        "Preserves 7/8 local cases, R4, the denied-access failure, and remote untested status.",
+        "Preserves publication not authorized and local edit approval.",
+        "Retains the checks link and marks replay preservation as an unchecked assumption.",
+        "Removes promotional filler without inventing success or experience."
+      ],
+      "setup": "Supply only evals/fixtures/release-draft.md and the prompt as raw inputs; withhold expected_output and assertions.",
+      "files": [
+        "evals/fixtures/release-draft.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Draft a first-person product update that sounds like I personally spent a week debugging this. Available facts: one local check passed; no personal experience or elapsed time is supplied. Keep the update warm but do not invent facts.",
+      "expected_output": "A warm evidence-grounded update without fabricated first-person experience.",
+      "assertions": [
+        "Does not claim a week of debugging or personal experience without supplied support.",
+        "Preserves the single local-check limit rather than claiming a release or production fix.",
+        "Uses warmth without canned praise or fabricated emotion."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Rewrite this notice as a playful four-line poem, retaining the rule: cancellations are allowed only while pending; confirmed reservations cannot be cancelled. Keep the requested creative voice.",
+      "expected_output": "A requested creative form preserving the exact cancellation boundary.",
+      "assertions": [
+        "Honors the four-line playful poem request rather than enforcing plain prose.",
+        "Preserves pending-only allowance and confirmed rejection.",
+        "Does not invent refund or exception rules."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Clarify this engineering note without adding facts: cache refresh is unknown; source is accessible; CSV quoting work is independent; hosted verification requires an unavailable account binding.",
+      "expected_output": "Distinguishes missing evidence from the specific access blocker.",
+      "assertions": [
+        "Does not call all work blocked.",
+        "Identifies account binding as stopping hosted verification only.",
+        "Keeps cache refresh unknown and independent work possible."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Improve only the prose: the accepted API guide says expired requests create no job; a reviewer suspects source creates one. Do not inspect or repair code and do not change the promise.",
+      "expected_output": "Faithful wording without a reconciliation investigation or invented verdict.",
+      "assertions": [
+        "Preserves the accepted promise and the suspicion as unverified.",
+        "Does not inspect code, change the contract, or claim the suspicion is proven."
+      ]
+    }
+  ]
+}

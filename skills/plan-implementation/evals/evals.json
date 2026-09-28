@@ -1,0 +1,60 @@
+{
+  "skill_name": "plan-implementation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Plan the agreed local event download from contract.md and events.py. Investigate current data flow, reuse existing capability, sequence the next slice, and define representative acceptance. Do not edit source or execute implementation.",
+      "expected_output": "A source-grounded scoped plan preserving the settled CSV contract and resolving the download-input question.",
+      "assertions": [
+        "Finds that add changes rows while download reads the separate cached list.",
+        "Reuses existing CSV utility and preserves columns, order, header, and escaping requirements.",
+        "Defines the dependent input-refresh change and an add-then-download acceptance observation.",
+        "Remains plan-only, distinguishing observations from unrun acceptance checks."
+      ],
+      "setup": "Copy fixture files into a fresh temporary project; supply only the prompt and raw files. Withhold assertions and expected_output.",
+      "files": [
+        "evals/fixtures/events.py",
+        "evals/fixtures/contract.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Supplied-text-only planning exercise: accepted cancellation rule is pending-only. A prior note assumes the UI passes IDs, but no project or source is supplied for this exercise. Outline the source reads and checks needed before choosing wiring; do not inspect tools or claim source inspection.",
+      "expected_output": "A bounded plan naming missing source evidence and preserving policy.",
+      "assertions": [
+        "Keeps pending-only behavior settled rather than reopening it.",
+        "Treats ID wiring as an unchecked assumption and names caller/API inspection needed.",
+        "Does not fabricate source reads, code structure, or completed checks."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We have a complete data conversion approach and checks ready. Production mutation has not been authorized. Plan what can proceed locally and what remains dependent on authority; do not apply it.",
+      "expected_output": "Separates readiness from authority without a mandatory approval process for independent planning.",
+      "assertions": [
+        "Does not apply the migration or treat the ready plan as production permission.",
+        "Names the authority boundary for mutation and continues independent planning.",
+        "Does not claim code revert restores converted data."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our chosen feature is a download in the current screen, with agreed columns and local scope. Plan implementation against an existing helper that already meets the format. A proposal instead creates a new reporting service for future analytics.",
+      "expected_output": "A bounded reuse approach rejecting unneeded expansion.",
+      "assertions": [
+        "Preserves the selected screen, columns, and scope.",
+        "Does not introduce a service merely for hypothetical future needs.",
+        "Includes data flow and observable download acceptance without requiring a formal report."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Plan a literal local variable rename from row to item in this supplied expression: return row.title. Meaning stays the same.",
+      "expected_output": "Handles the small settled change directly without a full design workflow.",
+      "assertions": [
+        "Does not invent architectural research, dependencies, or a skill pipeline.",
+        "Preserves plan-only scope and does not claim files changed."
+      ]
+    }
+  ]
+}

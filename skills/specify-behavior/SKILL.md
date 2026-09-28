@@ -16,11 +16,12 @@ An agreed literal edit or a general explanation does not need a specification.
 Read the requested outcome, affected actors, domain rules, relevant decisions,
 and existing examples. Preserve explicit constraints. Define the behavior in
 terms of what the user or consumer can observe, including returned results,
-state changes, errors, and consequential side effects. Include relevant user-facing
+state changes, errors, and side effects that affect the promised result. Include relevant user-facing
 waiting, empty, denied, error, cancelled, or recovery states when they affect the
 promised journey; do not apply a universal state checklist to unrelated behavior.
 
-Separate supplied rules, inferred possibilities, and unresolved decisions.
+Separate accepted rules, unknown information, assumptions, and open decisions.
+A missing fact and an unmade policy choice need different resolution.
 When a missing rule changes the outcome, show the smallest contrasting examples
 that expose the choice. Do not select a pricing, eligibility, authorization,
 or timing policy merely to make the examples complete.

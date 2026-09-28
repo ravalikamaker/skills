@@ -16,7 +16,7 @@ rests on an uncertain cause, or a larger investment depends on feasibility.
 Start from the user's decision, intended benefit, and constraints. Do not add an
 experiment to a routine task whose relevant uncertainty is already resolved.
 
-List important assumptions from the available evidence, then choose the one
+Identify the unverified premises the proposed approach relies on, then choose the one
 whose failure would most change the decision. Explain that choice briefly.
 Do not confuse an implementation check with a test of customer benefit.
 

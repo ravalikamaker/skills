@@ -79,7 +79,8 @@ do not automatically become permanent rules, global memory, or policy changes.
 ## Authoring and releases
 
 See [Authoring and validation](docs/authoring.md) for the layout, checks, and
-version policy. Keep published versions immutable and synchronize bundle
+version policy and the [decision rule for new skills](docs/authoring.md#author-a-skill).
+Keep published versions immutable and synchronize bundle
 manifests and catalog versions when releasing.
 
 ## Submit a pull request
