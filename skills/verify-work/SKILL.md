@@ -63,6 +63,13 @@ from the implementation being checked:
   need an explicit requirement rather than accepting them as cleanup.
 - Inspect calculations, source support, internal consistency, and usability for
   documents, analyses, or other deliverables.
+- Check affected docs, examples, and comments for drift from accepted intent and
+  the changed behavior, including generated sources when relevant. Check whether
+  added documentation was requested or useful; routine completion alone does not
+  justify new files. Preserve valid promises when code is defective. Keep comments
+  that explain non-obvious invariants, rationale, or public contracts; flag redundant
+  line-by-line narration within scope. Read the [documentation example](references/testing-examples.md#documentation-can-expose-a-code-defect)
+  when checking a docs/code mismatch or unnecessary additions.
 - Check interactions between combined contributions, not only isolated parts.
 - Run applicable required checks; identify what they establish and what they omit.
   Local success does not replace an independently required CI gate. When a check

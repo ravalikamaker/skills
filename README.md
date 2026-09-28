@@ -1,15 +1,15 @@
 # Skills
 
-Thirteen portable [Agent Skills](https://agentskills.io/specification) by
+Fourteen portable [Agent Skills](https://agentskills.io/specification) by
 [ravalikamaker](https://github.com/ravalikamaker) for framing problems, planning
 experiments, modeling domains, shaping features, specifying behavior, coordinating
-work, diagnosing failures, evolving existing systems, checking results,
-resuming sessions, saving lessons,
+work, diagnosing failures, evolving existing systems, reconciling documentation,
+checking results, resuming sessions, saving lessons,
 preventing repeated failures, and connecting evidence across sources.
 
 ## Start here
 
-Choose your harness, then install individual skills or the thirteen-skill bundle.
+Choose your harness, then install individual skills or the fourteen-skill bundle.
 Choose **one installation method** per host to avoid duplicate skills.
 
 | Your harness | Individual skills | Bundle |
@@ -18,7 +18,7 @@ Choose **one installation method** per host to avoid duplicate skills.
 | [Claude Code](docs/install.md#claude-code) | Skills CLI or folder copy | Repository plugin marketplace |
 | [Cursor](docs/install.md#cursor) | Skills CLI or folder copy | Local plugin; not publicly listed |
 | [GitHub Copilot CLI / VS Code](docs/install.md#github-copilot) | Skills CLI or folder copy | Direct repository plugin |
-| [OpenClaw](docs/install.md#openclaw) | Native skill install or folder copy | Install all thirteen skill folders |
+| [OpenClaw](docs/install.md#openclaw) | Native skill install or folder copy | Install all fourteen skill folders |
 
 For an individual skill, run this in your **target project**, with Node.js and
 pnpm available. Change `codex` to `claude-code`, `cursor`, `github-copilot`, or
@@ -28,7 +28,7 @@ pnpm available. Change `codex` to `claude-code`, `cursor`, `github-copilot`, or
 pnpm dlx skills add ravalikamaker/skills --skill mission-lead --agent codex --copy
 ```
 
-Replace `mission-lead` with any name below, or `'*'` to copy all thirteen. You can
+Replace `mission-lead` with any name below, or `'*'` to copy all fourteen. You can
 also replace `ravalikamaker/skills` with an absolute path to this clone.
 The [Skills CLI](https://github.com/vercel-labs/skills) is optional;
 [manual installation](docs/install.md#standalone-skills) needs no Node.js or pnpm.
@@ -48,6 +48,7 @@ skill picker, or explicitly ask for it by name:
 | [diagnose-failure](skills/diagnose-failure/SKILL.md) | Investigate a failure with competing explanations and decisive checks. | “Use diagnose-failure to investigate these intermittent import failures; separate observations, hypotheses, negative attempts, and the next useful check.” |
 | [evolve-safely](skills/evolve-safely/SKILL.md) | Change existing contracts while protecting consumers and data. | “Use evolve-safely to plan the amount-field migration while old clients remain active; include compatibility, retirement criteria, and recovery limits.” |
 | [mission-lead](skills/mission-lead/SKILL.md) | Coordinate substantial work and check completion. | “Use mission-lead to implement CSV export in this project, delegate independent work where supported, and verify the result.” |
+| [reconcile-docs](skills/reconcile-docs/SKILL.md) | Reconcile docs and implementation against accepted intent in either direction. | “Use reconcile-docs to audit this CLI guide against its current implementation and accepted contract; report stale claims and code defects without edits.” |
 | [verify-work](skills/verify-work/SKILL.md) | Check outcomes against independent evidence. | “Use verify-work to review this report against the attached source data and tell me what is still unproven.” |
 | [session-handoff](skills/session-handoff/SKILL.md) | Preserve unfinished work for another session. | “Use session-handoff to save a checkpoint in docs/handoff.md with decisions, checks, and the next action.” |
 | [capture-learning](skills/capture-learning/SKILL.md) | Save a reusable lesson with its evidence. | “Use capture-learning to record what this retry failure taught us in docs/learning/retries.md.” |
@@ -60,10 +61,10 @@ installed, with bounded fallbacks when they are absent. Delegation and model
 selection depend on the tools your host actually exposes. Writing a handoff or
 lesson requires an authorized destination; installation grants no extra authority.
 
-**Package status:** Version `0.3.2` packages thirteen portable skill folders with
+**Package status:** Version `0.4.0` packages fourteen portable skill folders with
 Agent Plugins 1.0 and Claude Code compatibility manifests, worked examples, and
 conditional guidance. Its structural checks are reported separately from native
-installation, loading, and runtime behavior, which remain untested for `0.3.2`.
+installation, loading, and runtime behavior, which remain untested for `0.4.0`.
 
 Historical `0.3.0` isolated local-source marketplace registration and installation
 passed on Codex 0.157.1 and Claude Code 2.1.283. Both installed bundles contained

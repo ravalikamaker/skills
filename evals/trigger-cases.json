@@ -1,5 +1,5 @@
 {
-  "description": "Metadata-only initial-routing fixture for thirteen independently installable skills. Each case has one expected skill or null for none; focus identifies the boundary being probed, not an expected activation. Each skill has three explicit or implicit positive cases and three near-miss negatives. A negative for the focus skill may route to a neighboring skill. Select only the single best initial skill, not every skill that might be useful later. Negatives include questions about named skills and bounded tasks outside their scope. These fixtures do not establish installation, host loading, observed skill activation, task execution, or live host behavior.",
+  "description": "Metadata-only initial-routing fixture for fourteen independently installable skills. Each case has one expected skill or null for none; focus identifies the boundary being probed, not an expected activation. Each skill has three explicit or implicit positive cases and three near-miss negatives. A negative for the focus skill may route to a neighboring skill. Select only the single best initial skill, not every skill that might be useful later. Negatives include questions about named skills and bounded tasks outside their scope. These fixtures do not establish installation, host loading, observed skill activation, task execution, or live host behavior.",
   "cases": [
     {
       "id": "lead-01",
@@ -624,6 +624,54 @@
       "prompt": "Organize the three engineers implementing a new search feature, assign independent files, manage dependencies, and integrate their results. There is no existing interface migration.",
       "expected_skill": "mission-lead",
       "rationale": "Explicit delegated coordination is orchestration rather than evolution of an existing contract."
+    },
+    {
+      "id": "docs-01",
+      "focus": "reconcile-docs",
+      "kind": "explicit",
+      "prompt": "Use reconcile-docs to audit the current CLI guide against code and accepted release decisions. Report stale claims and code defects; no edits.",
+      "expected_skill": "reconcile-docs",
+      "rationale": "Explicit bounded documentation reconciliation, with audit authority only."
+    },
+    {
+      "id": "docs-02",
+      "focus": "reconcile-docs",
+      "kind": "implicit",
+      "prompt": "The API guide promises expired requests create no job, but implementation seems to create one before rejecting. Check the accepted contract and repair the code locally if the promise applies; update any stale affected comments.",
+      "expected_skill": "reconcile-docs",
+      "rationale": "Traces an existing documented promise to code and authorized repair without assuming code is correct."
+    },
+    {
+      "id": "docs-03",
+      "focus": "reconcile-docs",
+      "kind": "implicit",
+      "prompt": "Our accepted version-two flag rename is implemented, but help text and generated command docs still show the old flag. Update their existing source and regenerate using our local tools, preserving version-one docs.",
+      "expected_skill": "reconcile-docs",
+      "rationale": "Code-to-docs correction respects accepted version scope and generated source."
+    },
+    {
+      "id": "docs-04",
+      "focus": "reconcile-docs",
+      "kind": "negative",
+      "prompt": "What does reconcile-docs mean by an accepted contract?",
+      "expected_skill": null,
+      "rationale": "A capability question does not request reconciliation."
+    },
+    {
+      "id": "docs-05",
+      "focus": "reconcile-docs",
+      "kind": "negative",
+      "prompt": "Rewrite this README sentence in simpler language without checking code or changing its meaning.",
+      "expected_skill": null,
+      "rationale": "A bounded prose rewrite does not require documentation drift investigation."
+    },
+    {
+      "id": "docs-06",
+      "focus": "reconcile-docs",
+      "kind": "negative",
+      "prompt": "Before implementation, turn our agreed cancellation rule into representative success and rejection examples. There are no existing docs or code to reconcile.",
+      "expected_skill": "specify-behavior",
+      "rationale": "New behavior examples need specification rather than reconciliation of existing claims."
     }
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "skill_name": "reconcile-docs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit only: compare this current CLI/API documentation with accepted decisions and observable behavior in the supplied synthetic project. Report drift and dispositions; no edits or new report files are authorized.",
+      "expected_output": "Read-only findings distinguish stale default documentation from a code defect against the accepted rejection promise.",
+      "assertions": [
+        "Leaves all supplied files unchanged and creates no report file.",
+        "Identifies the README default as stale against current contract and CLI default.",
+        "Identifies nonpositive attempts as a code defect rather than weakening the rejection promise.",
+        "Distinguishes local executable evidence from static inspection."
+      ],
+      "setup": "Copy evals/fixtures/ contents to a fresh temporary workspace outside this repository. Work there with the authority in the prompt. Run python -m unittest test_delivery; the nonpositive-limit check is intended to fail before repair. Do not expose expected_output or assertions to the executor.",
+      "files": [
+        "evals/fixtures/CONTRACT.md",
+        "evals/fixtures/README.md",
+        "evals/fixtures/delivery.py",
+        "evals/fixtures/test_delivery.py"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Local code and documentation repairs are authorized in this synthetic project. Reconcile the current delivery CLI/API docs and implementation with the accepted contract, and verify the affected behavior. No external changes or new report document.",
+      "expected_output": "Preserves the rejection promise, fixes its implementation, updates the stale default guidance, and checks side effects and valid delivery behavior.",
+      "assertions": [
+        "Repairs nonpositive-limit behavior before sender invocation without weakening accepted docs or tests.",
+        "Updates README default to three based on contract and CLI evidence.",
+        "Runs executable checks for rejection, exhaustion, and early success; reports before/after evidence honestly.",
+        "Keeps the diff scoped and uses the completion response instead of a new report."
+      ],
+      "setup": "Copy evals/fixtures/ contents to a fresh temporary workspace outside this repository. Work there with the authority in the prompt. Run python -m unittest test_delivery; the nonpositive-limit check is intended to fail before repair. Do not expose expected_output or assertions to the executor.",
+      "files": [
+        "evals/fixtures/CONTRACT.md",
+        "evals/fixtures/README.md",
+        "evals/fixtures/delivery.py",
+        "evals/fixtures/test_delivery.py"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review only: the current retry guide says unlimited retries, code caps them at three, and a newer proposal suggests three. History contains no acceptance of that proposal. A separate CLI flag rename is confirmed in the accepted release decision and code. Reconcile what can be established; do not invent a policy.",
+      "expected_output": "Investigates available authority evidence, leaves retry intent unresolved, and independently reports the confirmed stale flag.",
+      "assertions": [
+        "Does not treat newer proposal or current code as automatic authority.",
+        "Asks only the material retry-policy decision if accessible evidence cannot settle it.",
+        "Continues independent flag investigation and keeps the review read-only.",
+        "Does not implement a roadmap or create a mandatory audit report."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Documentation repair is authorized for CLI version two. The accepted decision changed timeout units to milliseconds; parser and a local invocation confirm milliseconds. Help text in cli.py still says seconds and docs/commands.md is generated from that help by the existing local generator. Version-one docs correctly say seconds. Update the version-two docs; no new tools or external actions.",
+      "expected_output": "Corrects the version-two help source and regenerates its command reference, preserving version-one history and qualifying proof.",
+      "assertions": [
+        "Edits generated source and uses the existing safe relevant generator rather than only hand-editing output.",
+        "Updates units and affected version-two examples against the accepted contract.",
+        "Preserves version-one guidance and useful API invariants or required directives.",
+        "Does not confuse links or timestamps with executable behavior proof."
+      ]
+    }
+  ]
+}

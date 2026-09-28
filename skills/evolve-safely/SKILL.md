@@ -16,7 +16,9 @@ risk does not need a migration workflow.
 Read the requested outcome, agreed domain and architecture constraints, current
 behavior, relevant decisions, and existing project checks. Find affected callers,
 data readers and writers, generated clients, or other consumers through the
-available evidence. Mark unknown consumers and deployment order instead of
+available evidence. Published docs and examples are part of the affected consumer
+contract; identify their applicable version and audience, and maintain them with
+the implementation change. Mark unknown consumers and deployment order instead of
 assuming one repository contains every dependency.
 
 Identify the behavior that must remain compatible and changes explicitly

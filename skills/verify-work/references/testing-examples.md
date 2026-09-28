@@ -53,6 +53,15 @@ a generated image or report likewise needs inspection of the result itself.
 These checks answer particular claims, not a universal refresh-and-persistence
 checklist for stateless artifacts.
 
+## Documentation can expose a code defect
+
+An accepted API contract and current guide say an expired token creates no job.
+The implementation returns an error but creates a job first. Check both the
+response and the side effect; changing the guide to allow creation would hide the
+defect. Conversely, when an accepted flag rename is implemented correctly, update
+the affected usage example or report it as stale. Inspect only the relevant
+docs and comments, and do not add a completion report unless requested or useful.
+
 ## Independent acceptance
 
 For a consequential combined export, an optional independent acceptance brief

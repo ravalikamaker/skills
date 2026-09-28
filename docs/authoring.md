@@ -17,6 +17,7 @@ skills/                     # Skill source, each in its own directory
   design-experiment/SKILL.md # Bounded hypothesis-test planning
   diagnose-failure/SKILL.md  # Evidence-based failure investigation
   evolve-safely/SKILL.md     # Compatibility, migration, and retirement
+  reconcile-docs/SKILL.md    # Documentation and implementation drift in either direction
   prevent-repeat/SKILL.md    # Recurring-failure prevention proposals
   connect-insights/SKILL.md  # Multi-source synthesis with provenance
 templates/
@@ -83,7 +84,8 @@ validated.
 ### Evaluate skills
 
 `evals/trigger-cases.json` contains explicit, implicit, and negative selection
-cases: three positive and three near-miss negatives for each of thirteen skills.
+cases: three positive and three near-miss negatives for each of fourteen skills
+(84 cases total).
 Choose the single best initial skill, or none; later skill use is outside this fixture.
 Recheck existing negatives whenever the catalog grows to avoid cross-skill label
 collisions. Compare metadata-only skill catalogs with the expected labels withheld,
@@ -110,7 +112,7 @@ See [Contributing](../CONTRIBUTING.md#evaluate-a-change) for the evaluation work
 
 ## Releases
 
-The package version is `0.3.2`; a version bump is not publication evidence. Before publishing a change, bump the
+The package version is `0.4.0`; a version bump is not publication evidence. Before publishing a change, bump the
 version consistently in `plugin.json`, `.claude-plugin/plugin.json`, and every
 marketplace catalog entry that carries it. Both catalogs point at this repository
 root and share the same `skills/` tree. Never alter an already published version

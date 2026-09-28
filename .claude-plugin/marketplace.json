@@ -7,10 +7,10 @@
     {
       "name": "ravalikamaker-skills",
       "source": "./",
-      "version": "0.3.2"
+      "version": "0.4.0"
     }
   ],
   "metadata": {
-    "description": "Portable workflows for problem framing, domain modeling, feature shaping, behavior specification, experiments, diagnosis, safe evolution, coordination, verification, handoff, learning, prevention, and synthesis."
+    "description": "Portable workflows for problem framing, domain modeling, feature shaping, behavior specification, experiments, diagnosis, safe evolution, documentation reconciliation, coordination, verification, handoff, learning, prevention, and synthesis."
   }
 }

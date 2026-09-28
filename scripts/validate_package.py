@@ -15,7 +15,7 @@ SCHEMA_SHA256 = "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab88
 SKILLS = {
     "capture-learning", "connect-insights", "design-experiment", "diagnose-failure",
     "evolve-safely", "frame-problem",
-    "mission-lead", "model-domain", "prevent-repeat", "session-handoff",
+    "mission-lead", "model-domain", "prevent-repeat", "reconcile-docs", "session-handoff",
     "shape-feature", "specify-behavior", "verify-work",
 }
 NAME = "ravalikamaker-skills"

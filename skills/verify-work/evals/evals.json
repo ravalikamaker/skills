@@ -137,6 +137,17 @@
         "Provides source and diagnostic context when needed for debugging rather than preserving blindness.",
         "Labels the pass as proposed rather than executed."
       ]
+    },
+    {
+      "id": 14,
+      "prompt": "Review only: a routine CLI bug fix is complete and its targeted behavior checks passed for this version. An accepted flag rename from --wait to --timeout was implemented, but the current canonical usage example still uses --wait. The diff adds docs/fix-summary.md repeating the completion message without a named reader or use, and comments saying increment counter above counter += 1. An existing comment explains why attempts must be counted before sending to prevent replay after a crash. Verify the affected documentation and comment quality without edits or a broader audit.",
+      "expected_output": "Reports the stale canonical example and unnecessary additions while preserving the meaningful replay invariant comment and valid behavior evidence.",
+      "assertions": [
+        "Identifies the canonical usage example as stale against the accepted rename and implementation.",
+        "Flags the redundant summary document and line narration without imposing a new report or repository-wide audit.",
+        "Preserves the crash/replay invariant comment rather than treating all comments as clutter.",
+        "Reuses valid targeted behavior evidence, keeps review read-only, and scopes findings to the supplied change."
+      ]
     }
   ]
 }

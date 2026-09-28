@@ -82,7 +82,10 @@ Give each worker the purpose, beneficiary, problem, completion criteria, outcome
 non-goals, relevant facts, owned files or artifacts,
 authorized actions, dependencies, checks, when to stop, and leaf guard.
 Ask it to report changed paths or findings, evidence, unresolved issues, and limits.
-Assign integration explicitly once inputs are ready. Resolve routine in-scope
+Assign integration explicitly once inputs are ready. The implementation owner
+maintains affected existing docs and comments in the same change, favoring the
+existing canonical location. A new document should serve a named reader and use;
+routine completion does not require new documentation files. Resolve routine in-scope
 worker questions, including difficult ones, from available evidence rather than
 passing them to the user. Escalate only a concrete missing capability, access,
 information, material intent, or authority: ask for the smallest contribution
