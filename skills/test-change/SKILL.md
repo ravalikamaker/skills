@@ -38,6 +38,12 @@ where practical. If the earlier version cannot run, state that fail-before proof
 is missing. A tests-only task may correctly end with a failing regression test:
 report the defect and leave source unchanged unless its repair is authorized.
 
+Use repeatable, noninteractive checks where supported. Control relevant input and
+state with existing fixtures or isolated resources, restore temporary changes,
+and inspect exit status and failures. A hanging prompt, setup error, or empty
+suite is not a passing test. Report the command and actionable failure evidence;
+do not weaken assertions to repair the runner.
+
 Run accessible checks yourself or through permitted bounded delegation. Inspect
 available tools before calling execution unavailable; do not assign routine QA
 to the user. Honor required project gates. If CI-only execution needs absent

@@ -38,11 +38,21 @@ Describe the scoped changes, affected interfaces and data flow, reuse, and the
 order of dependencies. Make inputs, outputs, errors, and side effects clear enough
 for the next owner. Include compatibility or data-transition needs when the actual
 change creates them; do not prescribe layers or migration phases by default.
+Before preserving an old form, identify an actual consumer, retained data,
+supported contract, or explicit requirement that needs it. Earlier code alone
+creates no compatibility obligation. When relevant callers and data can move
+together and no obligation remains, plan a direct atomic change rather than
+aliases, adapters, fallbacks, dual writes, or phases. Unreleased or unmerged status
+does not establish absence of preview consumers or retained data; resolve
+approach-changing unknowns with targeted checks.
 
 Choose a representative end-to-end acceptance observation that reaches the promised
 result, with rejection or recovery where it changes correctness. Identify focused
 checks that cover isolated rules and required project gates. These are planned
-checks, not execution proof. Read [planning examples](references/planning-examples.md)
+checks, not execution proof. When a check depends on setup or tooling, name the
+existing command or inspectable artifact, environment/access prerequisites, and
+expected observation so the next owner can run it; leave unknown commands
+explicitly unresolved rather than inventing them. Read [planning examples](references/planning-examples.md)
 when sequencing an evidence-dependent slice or separating authority from readiness.
 
 Return the approach in the requested form with only the assumptions, open decisions,

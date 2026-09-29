@@ -54,6 +54,10 @@ Check representative behavior, relevant rejection or recovery, and consequential
 side effects. For a refactor, compare affected observable behavior with the prior
 version and agreed rules. For documents or analyses, check calculations, source
 support, consistency, and usability. Check interactions among combined changes.
+For a development-workflow claim, exercise the affected navigation, setup, run,
+change, or verification journey as relevant. A script's existence or a successful
+run in a warm checkout does not prove usable commands or fresh-environment setup;
+identify the environment and steps actually exercised.
 Inspect affected docs, examples, and comments against accepted intent: preserve
 valid promises and useful invariant comments, and flag stale or unnecessary
 additions. Read [acceptance examples](references/acceptance-examples.md) when a

@@ -19,3 +19,24 @@ not authority to apply a production migration.
 A passing schema check proves neither date interpretation nor compatibility.
 Advance only using the evidence relevant to the chosen transition; do not turn
 this example into a required migration sequence for every refactor.
+
+## The same representation change, different obligations
+
+Synthetic request: plan changing `amount` from decimal strings to integer minor
+units. No implementation or data mutation is authorized.
+
+- All relevant callers are controlled and can update together; targeted inspection
+  establishes there is no retained old-form data or supported old contract. Plan
+  one coordinated change and focused amount, validation, and caller checks. Do not
+  keep an alias, fallback, or staged migration solely because the old code exists.
+- A supported older client must continue reading decimal strings while a newer
+  client adopts minor units. That actual obligation justifies temporary support
+  for both forms, consumer checks, and retirement evidence. Do not call this atomic
+  merely because the server change is unmerged.
+
+A preproduction preview can also retain records or serve an independently updated
+client. Inspect the relevant data and usage before deciding. If those facts remain
+unavailable, name the narrow unknown and defer the dependent transition decision;
+continue independent planning. “Not released” neither authorizes discarding data
+nor proves that compatibility is required. In either case, preserve amount meaning,
+validation, security, and the scope of the requested change.

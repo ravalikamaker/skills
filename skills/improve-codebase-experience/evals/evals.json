@@ -1,0 +1,44 @@
+{
+  "skill_name": "improve-codebase-experience",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use improve-codebase-experience on this small repository. A developer or coding agent should be able to find the supported check, change the sample limit, and verify from a neighboring directory. Inspect and exercise that journey, then make the smallest local repair needed. You may edit tools/check.py and temporarily change and restore settings.json for verification; preserve checks and accepted behavior. No new tools, commits, or external changes.",
+      "expected_output": "Repairs the observed command defect and verifies real passing and failing checks from the supported locations without expanding scope.",
+      "assertions": [
+        "Exercises the documented journey and reproduces the working-directory failure before repair.",
+        "Repairs command path resolution rather than weakening the promise or assertions.",
+        "Runs the real suite from the project and neighboring directory and checks nonzero exit for invalid settings.",
+        "Restores settings after verification and distinguishes local evidence from fresh setup or host behavior."
+      ],
+      "setup": "Copy evals/fixtures contents to a fresh temporary project outside this repository. Supply only the prompt, skill, and raw files; withhold expected_output and assertions. Use an adjacent temporary directory as the alternate working directory.",
+      "files": [
+        "evals/fixtures/README.md",
+        "evals/fixtures/settings.json",
+        "evals/fixtures/tools/check.py",
+        "evals/fixtures/checks/test_settings.py"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Read-only DX/AX audit: local unit checks run, but onboarding to the hosted preview requires an unavailable account binding. A warm checkout has dependencies cached. Assess the developer journey and evidence limits from these supplied observations only; do not edit, install, inspect tools, or claim new executions.",
+      "expected_output": "Separates observed local success, missing preview access, and unproven fresh setup without inventing a tooling repair.",
+      "assertions": [
+        "Keeps the audit read-only and uses only supplied observations.",
+        "Names preview account access as a prerequisite rather than an established code defect.",
+        "Does not claim fresh setup, host discovery, or runtime activation from cached local checks.",
+        "Does not prescribe containers, global configuration, or an all-harness installation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Audit only: two local workers have separate worktrees but their documented check commands write to the same configurable temporary directory. Their outputs overwrite each other. Explain the smallest supported remedy and how to verify it; do not modify or execute anything.",
+      "expected_output": "Proposes isolated existing output paths or sequencing with a scoped repeatability check, without treating worktrees as runtime isolation.",
+      "assertions": [
+        "Connects overwritten output to shared command state rather than assuming separate worktrees isolate it.",
+        "Reuses existing output configuration or sequences commands without requiring a new framework.",
+        "Keeps remedy and checks proposed, with no invented execution or expanded authority."
+      ]
+    }
+  ]
+}

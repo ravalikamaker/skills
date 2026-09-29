@@ -1040,6 +1040,86 @@
       "prompt": "Our relevant requirements and evidence are already supplied. Compare the viable cache and direct-read approaches and recommend one with scoped tradeoffs; no trial is requested.",
       "expected_skill": "evaluate-options",
       "rationale": "Comparison needs no new experiment when decisive evidence exists."
+    },
+    {
+      "id": "experience-01",
+      "focus": "improve-codebase-experience",
+      "kind": "explicit",
+      "prompt": "Use improve-codebase-experience to inspect our setup-to-change-to-check workflow, repair demonstrated local command friction, and rerun the affected journey. No publication.",
+      "expected_skill": "improve-codebase-experience",
+      "rationale": "Explicit scoped development journey repair."
+    },
+    {
+      "id": "experience-02",
+      "focus": "improve-codebase-experience",
+      "kind": "implicit",
+      "prompt": "Developers and coding agents keep losing time finding the entry point, launching the app, and running checks after a small change. Audit this repository workflow read-only and connect the actual obstacles to the tasks they prevent.",
+      "expected_skill": "improve-codebase-experience",
+      "rationale": "Requested outcome is development workflow usability, with read-only authority."
+    },
+    {
+      "id": "experience-03",
+      "focus": "improve-codebase-experience",
+      "kind": "implicit",
+      "prompt": "Our check runner depends on the launch directory and prompts during unattended runs. Repair the supported local development commands and verify their working-directory, failure-exit, and repeatability behavior.",
+      "expected_skill": "improve-codebase-experience",
+      "rationale": "Supported command usability repair across the development workflow."
+    },
+    {
+      "id": "experience-04",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Update the README flags against the accepted CLI contract and current implementation; reconcile stale documentation only.",
+      "expected_skill": "reconcile-docs",
+      "rationale": "Documentation drift has a more specific reconciliation workflow."
+    },
+    {
+      "id": "experience-05",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Investigate this one intermittent production import failure with competing explanations and decisive checks; do not edit.",
+      "expected_skill": "diagnose-failure",
+      "rationale": "A single failure diagnosis does not request repository workflow improvement."
+    },
+    {
+      "id": "experience-06",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Plan the technical interfaces and dependency sequence for our settled CSV feature, without implementing.",
+      "expected_skill": "plan-implementation",
+      "rationale": "Feature implementation planning is distinct from development workflow friction."
+    },
+    {
+      "id": "experience-07",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Write and run regression tests for the accepted discount boundary; tests-only edits, no tooling repair.",
+      "expected_skill": "test-change",
+      "rationale": "Targeted coverage has its own workflow."
+    },
+    {
+      "id": "experience-08",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Verify the completed authentication change against the accepted access-control contract and check for authorization defects; do not improve development tooling.",
+      "expected_skill": "verify-work",
+      "rationale": "Completed security behavior needs contract acceptance, distinct from development workflow improvement."
+    },
+    {
+      "id": "experience-09",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "Verify the completed page against its accepted loading-time target using the supplied measurement setup; no repository workflow changes.",
+      "expected_skill": "verify-work",
+      "rationale": "Completed product performance needs acceptance against the agreed target, distinct from development workflow friction."
+    },
+    {
+      "id": "experience-10",
+      "focus": "improve-codebase-experience",
+      "kind": "negative",
+      "prompt": "What does improve-codebase-experience do?",
+      "expected_skill": null,
+      "rationale": "A capability question does not invoke the workflow."
     }
   ]
 }

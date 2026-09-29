@@ -21,9 +21,15 @@ contract; identify their applicable version and audience, and maintain them with
 the implementation change. Mark unknown consumers and deployment order instead of
 assuming one repository contains every dependency.
 
-Identify the behavior that must remain compatible and changes explicitly
-allowed. Include representative existing inputs, outputs, error behavior, and
-data meaning. Code that compiles does not establish consumer compatibility;
+Before preserving old behavior, identify the actual consumer, retained data,
+supported contract, or explicit requirement that needs it. Earlier implementation
+alone is no compatibility obligation. Unreleased, unmerged, or greenfield status
+also does not rule out preview consumers or retained data. Resolve consequential
+unknowns with targeted caller, usage, or data checks; do not invent consumers or
+assume there are none.
+
+Identify required inputs, outputs, errors, and data meaning, plus changes explicitly
+allowed. Code that compiles does not establish consumer compatibility;
 a schema migration that runs does not establish that old data keeps its meaning.
 
 ## Choose a transition proportional to the risk
@@ -32,8 +38,11 @@ Use existing capability when it satisfies the transition; justify a replacement
 by a concrete consumer or data gap. Read [transition examples](references/transition-examples.md)
 when choosing atomic change versus coexistence or assessing retirement and recovery.
 
-Use an atomic change when the relevant consumers and data can move together
-safely. When old and new versions must coexist, consider expanding support,
+Use a direct atomic change when relevant consumers and data can move together
+safely and no compatibility obligation remains. Do not add aliases, adapters,
+fallbacks, dual writes, or migration phases merely because old code exists.
+Preserve required validation, security, and data integrity in either approach.
+When old and new versions must coexist, consider expanding support,
 migrating consumers or data, then removing the old form only after retirement
 criteria are met. Do not impose this sequence when it adds no useful protection.
 

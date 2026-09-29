@@ -49,6 +49,37 @@
         "Proposes relevant invariant and transition checks rather than a generic assurance.",
         "Does not apply the migration or fabricate a tested recovery."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Plan only: change amount from decimal strings to integer minor units in an unreleased local API. Targeted inspection has established that all relevant callers are controlled and can update together, no old-form data is retained, and no supported old contract or explicit compatibility requirement exists. Preserve amount meaning and validation; do not implement.",
+      "expected_output": "Plans a direct atomic caller/API change with focused invariant checks, without speculative compatibility mechanisms.",
+      "assertions": [
+        "Bases the direct change on established callers, data, and contract evidence, rather than unreleased status alone.",
+        "Does not add aliases, adapters, fallbacks, dual writes, or migration phases solely because the decimal-string implementation exists.",
+        "Preserves amount meaning and validation, stays plan-only, and labels checks unexecuted."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Plan only: change amount from decimal strings to integer minor units in an unreleased API revision. A supported older preview client must remain functional while a newer client updates next week. Existing records contain decimal strings. Preserve amount meaning and validation; do not implement.",
+      "expected_output": "Plans proportionate temporary compatibility and data checks against actual older-client and retained-data obligations despite unreleased status.",
+      "assertions": [
+        "Identifies the supported older preview client and retained records as actual obligations.",
+        "Does not choose an incompatible atomic replacement merely because the revision is unreleased.",
+        "Defines relevant coexistence, amount/data checks, and retirement evidence without applying changes or claiming code revert restores data."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Review approach only: a greenfield preview has an unmerged field-rename change. Callers in this checkout can move together, but the preview retains records and one independently updated preview consumer may still use the old field. No usage or data-format checks have run. The proposal deletes old records and assumes Git status means no compatibility obligations. What needs establishing before choosing a transition?",
+      "expected_output": "Rejects Git status as evidence of absent obligations and names targeted retained-data and consumer checks without inventing permanent compatibility or deletion authority.",
+      "assertions": [
+        "Names retained record format and actual preview-consumer requirements as specific facts to establish.",
+        "Does not assume either no consumers or a universal need for staged compatibility.",
+        "Does not approve deleting records, weakening integrity, or applying the unmerged change.",
+        "Keeps the review read-only and distinguishes proposed checks from executed proof."
+      ]
     }
   ]
 }

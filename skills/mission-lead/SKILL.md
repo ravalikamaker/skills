@@ -112,6 +112,11 @@ corrections or recovery. Give an independent reviewer fresh context and primary
 evidence. Avoid overlapping writes, including generated files and shared state;
 verify actual isolation rather than assuming subagents have separate workspaces.
 Transfer ownership explicitly before another worker edits the same material.
+For affected execution, establish command, working directory, environment/access
+prerequisites, and ownership of ports, temporary outputs, or shared data. Use
+existing isolation controls or sequence conflicting commands; separate workers or
+worktrees alone do not prove runtime isolation. Resolve these concrete needs for
+the assigned slice without turning dispatch into a global environment audit.
 
 Track worker handles, ownership, decisions, completed checks, and remaining work
 in existing context. Send failures and repairs back to the owning worker. Continue

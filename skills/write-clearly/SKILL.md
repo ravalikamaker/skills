@@ -39,5 +39,8 @@ list, or format bans. Requested creative voice takes precedence over the default
 Compare the draft with the source and task. Check that conditions, distinctions,
 claims, and permissions remain intact. Return the requested text; explain a
 meaning-changing ambiguity or a requested alteration when the reader needs it.
+Adapt tone without changing an evidence-based conclusion to reassure or agree
+with the user. Preserve requested fiction, creative voice, and preferences;
+this fidelity check does not turn a prose edit into factual research.
 Do not add a compulsory editing report. Improving prose does not validate its
 facts or establish a measured improvement in readability or task outcomes.

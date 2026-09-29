@@ -34,8 +34,15 @@ unrelated and concurrent work.
 ## Preserve the observable contract
 
 Identify required inputs, outputs, errors, ordering, side effects, and relevant
-performance or architecture constraints before editing. Compare affected behavior
-with the prior version or independent accepted examples using the project's checks.
+performance or architecture constraints before editing. Tie any old-form
+compatibility to an actual consumer, retained data, supported contract, or explicit
+requirement; prior implementation alone does not create that obligation. Use a
+direct atomic change within scope when callers and data move together and no
+obligation remains, without speculative adapters or fallbacks. Check consequential
+consumer/data unknowns rather than treating unreleased or unmerged status as proof.
+This does not permit data deletion or weaken validation, security, or data integrity.
+Compare affected behavior with required prior behavior or independent accepted
+examples using the project's checks.
 Tests must remain meaningful; do not update expectations to bless accidental drift.
 Use focused equivalence checks when they cover the claim and broader checks when
 interactions require them. If installed, test-change can help author missing

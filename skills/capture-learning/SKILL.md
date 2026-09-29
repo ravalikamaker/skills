@@ -26,6 +26,11 @@ benchmark results, or a general speedup from one sample. Save private execution
 lessons only to an authorized private destination; a public skill example may
 use clearly labeled synthetic data, never private traces.
 
+For recurring development friction, retain the affected task, environment,
+observed obstacle, supported remedy, and rerun evidence when these change a future
+action. Keep an untested workaround labeled as such; a useful note does not
+create command capabilities, harness loading, or authority to change configuration.
+
 Do not generalize one observed incident into a universal rule. Separate observed facts, inferences, and user preferences.
 
 For a consequential decision, retain the context, chosen option, rationale, and

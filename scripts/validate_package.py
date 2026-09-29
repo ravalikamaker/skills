@@ -14,7 +14,7 @@ SCHEMA = Path(__file__).parent / "vendor/agent-plugins-1.0.0/plugin.schema.json"
 SCHEMA_SHA256 = "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883"
 SKILLS = {
     "capture-learning", "connect-insights", "design-experiment", "diagnose-failure",
-    "evaluate-options", "evolve-safely", "frame-problem",
+    "evaluate-options", "evolve-safely", "frame-problem", "improve-codebase-experience",
     "mission-lead", "model-domain", "plan-implementation", "prevent-repeat", "reconcile-docs", "session-handoff",
     "shape-feature", "simplify-code", "specify-behavior", "test-change", "verify-work", "write-clearly",
 }
